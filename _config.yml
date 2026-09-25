@@ -1,0 +1,9 @@
+# GitHub Pages（Jekyll）設定: 社内資料をサイト配信から除外する。
+# リポジトリ自体は公開なので、機密情報は書かないこと（CLAUDE.md 6章）。
+exclude:
+  - org
+  - CLAUDE.md
+  - PLAN.md
+  - README.md
+  - content-calendar.md
+  - keywords.csv
