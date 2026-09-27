@@ -26,7 +26,7 @@ AIの部署では実行できない、人間（オーナー）にしかできな
   - 代替案: 設定を変えない場合は、`org/pipeline/0001-aga-selfcare-vs-clinic/01-research.md` の「※抜粋確認」の項目を、あなたが原文PDFで確認してください
   - 回答: 2026-09-27 オーナーが設定変更。curl で取得可能になった（WebFetch は引き続き遮断、brand.taisho.co.jp は証明書エラー）
 
-- [ ] **Google Search Console に登録し、サイトマップを送信**
+- [ ] **Google Search Console に登録し、サイトマップを送信**（**10月中旬のビタミンD記事公開の前に**）
   - 進捗: 2026-09-27 確認用メタタグを main の index.html に設置し、公開サイトへの反映を確認済み。残り: Search Console で「確認」→ サイトマップ送信
   - サイトマップURL: `https://hclab16k.github.io/health-affiliate-site/sitemap.xml`
   - 補足: GitHub Pages のプロジェクトサイトでは `robots.txt` がドメイン直下に置かれないため、
