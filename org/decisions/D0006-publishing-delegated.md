@@ -11,7 +11,7 @@
 - オーナーは公開後に確認し、問題があれば owner-inbox か会話で差し戻す。経営企画は差し戻しを最優先で対応する。
 - レビュー PASS 前のマージ、main への直接コミットはしない（例外: オーナーが個別に指示した場合。例: Search Console の確認タグ）。
 
-## 実施（2026-09-28）
+## 実施（2026-09-27）
 - 初回のマージはシステムの安全チェック（自己改変の判定）で止められた。オーナーが「権限設定でマージを許可する」を選択し、`.claude/settings.json` の permissions.allow に `mcp__github__merge_pull_request`・`Bash(git diff:*)`・`Bash(git log:*)` を追加した。
 
 ## 見直す条件
