@@ -6,6 +6,19 @@ AIの部署では実行できない、人間（オーナー）にしかできな
 
 ## 優先度: 高（組織を回す前提）
 
+- [ ] **【案件0001を止めています】一次情報サイトの本文を読めるようにする**
+  - 現状、クラウド環境のネットワーク設定で、以下のサイトの本文取得がすべて遮断されています（検索結果の抜粋しか見られない）。
+    医療記事の事実確認ができないため、案件0001は「執筆・レビュー」の手前で止めています。
+  - 対応: セッション画面上部の環境メニュー → Edit → Network access で、アクセスレベルを広げるか、次のドメインを許可リストに追加
+    - `www.dermatol.or.jp`（日本皮膚科学会・診療ガイドライン）
+    - `www.jstage.jst.go.jp`（学会誌）
+    - `minds.jcqhc.or.jp`（ガイドライン要約）
+    - `www.mhlw.go.jp`（厚労省・医療広告ガイドライン）
+    - `www.pmda.go.jp`（添付文書）
+    - `brand.taisho.co.jp` など、記事で扱うメーカー公式サイト
+  - 代替案: 設定を変えない場合は、`org/pipeline/0001-aga-selfcare-vs-clinic/01-research.md` の「※抜粋確認」の項目を、あなたが原文PDFで確認してください
+  - 回答:
+
 - [ ] **Google Search Console に登録し、サイトマップを送信**
   - サイトマップURL: `https://hclab16k.github.io/health-affiliate-site/sitemap.xml`
   - 補足: GitHub Pages のプロジェクトサイトでは `robots.txt` がドメイン直下に置かれないため、
