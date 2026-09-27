@@ -86,6 +86,8 @@
 | OTC の Drug Facts: 有効成分 Adapalene 0.1% (retinoid)、用途 "For the treatment of acne"。1日1回。傷・湿疹・日焼けした肌には使わない。**"If pregnant or breast-feeding, ask a doctor before use."**。使用中は日光・日焼けマシンを避け、外出時は日焼け止め。最初の数週間は刺激（赤み・かゆみ・乾燥・灼熱感）が出やすい。結果まで最大3か月。使用中に妊娠・妊娠予定なら中止して医師に相談。12歳未満は医師に相談。パッケージに "FIRST FDA-APPROVED OVER-THE-COUNTER TOPICAL RETINOID* FOR ACNE TREATMENT" "PREVIOUSLY AVAILABLE ONLY BY PRESCRIPTION"（`.sources/fda_differin_otc_label_2017.txt`） | https://www.accessdata.fda.gov/drugsatfda_docs/label/2017/020380Orig1s011lbl.pdf | 2026-09-27 | 公的 |
 | 現行の OTC ラベル（DailyMed、Updated December 7, 2022）にも "If pregnant or breast-feeding, ask a doctor before use." と "Some other retinoid drugs have been shown to cause birth defects. There is no specific evidence that Differin Gel 0.1% causes birth defects in humans when used topically as directed." の記載がある（`.sources/dailymed_differin_otc.txt` 143・187行） | https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0739d631-171b-42a8-bd55-0022b8df2d8a | 2026-09-27 | 公的 |
 | 米国の外用トレチノイン RENOVA (tretinoin cream) 0.02% は **"Rx only"**（処方薬）。効能は「総合的なスキンケアと日光回避を行う患者における、顔の細かいシワの緩和（palliation）の補助」で、"DOES NOT ELIMINATE WRINKLES, REPAIR SUN-DAMAGED SKIN, REVERSE PHOTOAGING, or RESTORE MORE YOUTHFUL or YOUNGER SKIN" と明記。妊娠中は使用しない（"should not be used during pregnancy"）（ラベル Rev. 07/12、`.sources/fda_renova_label_2014.txt` PDF p.2・p.8・p.10） | https://www.accessdata.fda.gov/drugsatfda_docs/label/2014/021108s015lbl.pdf | 2026-09-27 | 公的 |
+| **（版2追記）** FDA は **Differin Epiduo Acne Gel (adapalene/benzoyl peroxide) gel, 0.1%/2.5%** の**非処方（nonprescription＝OTC）使用**を承認した（NDA 220736、505(b)(2) 申請、2025-07-24 受付）。承認書の文言は "provides for the nonprescription use of … for the treatment of acne in adults and children 12 years and older"。承認はレターの日付で発効し、電子署名は **05/22/2026**（Division of Nonprescription Drugs I）。承認した容器は 2g・15g・30g・45g で、「45g は米国で処方薬として販売しているサイズ」とある（`.sources/fda_epiduo_otc_ltr_2026.txt` PDF p.1・p.5）。Drugs@FDA の区分は "Type 8 - Partial Rx to OTC Switch"、承認日 2026-05-22（openFDA drugsfda API の同データ。Drugs@FDA の画面は未確認） | https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220736Orig1s000ltr.pdf | 2026-09-27 | 公的 |
+| **（版2追記）** 同品の Drug Facts: 有効成分 **Adapalene 0.1% (retinoid)** と **Benzoyl Peroxide 2.5%**、目的はいずれも Acne treatment、用途 "For the treatment of acne"。1日1回。対象は "Adults and children 12 years of age and older"、"Children under 12 years of age: do not use"。**"If pregnant or breast-feeding, ask a doctor before use."**、使用中に妊娠・妊娠予定なら中止して医師に相談。日光・日焼けマシンを控え外出時は日焼け止め、最初の4週間は刺激が出やすい、結果まで最大3か月、髪や染めた布を脱色しうる。パッケージに "Previously available only by prescription" "First FDA-approved over-the-counter dual active ingredient acne treatment"（`.sources/fda_epiduo_otc_label_2026.txt` PDF p.1〜2。Leaflet p.12 に "Some other retinoid drugs have been shown to cause birth defects. There is no specific evidence that Differin Epiduo Acne Gel causes birth defects in humans when used topically as directed."） | https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/220736Orig1s000lbl.pdf | 2026-09-27 | 公的 |
 
 ### 日本: 医療用医薬品（アダパレン・トレチノイン）
 | 事実 | 出典URL | 確認日 | 信頼度 |
@@ -161,3 +163,24 @@
 - [x] 競合の弱点が1つ以上具体的に書かれている（区分×国の表が無い、日米の妊娠時の表示の違いが無い、言える効能の文言が原文付きで無い、競合の米国トレチノインの記述が原文と合わない）
 - [x] 事実情報すべてに出典URLと確認日がある（原文は `.sources/`。確認できなかったものは「未確認」に分けた）
 - [x] 推定値は推定と明記されている（検索ボリュームは相対的な推定のみ、数値なし）
+
+## 原文確認パス（Epiduo、2026-09-27）
+
+03-channel.md「前工程への質問・異議 3」への回答。**FDA の原文で確認できた。**
+
+- **調べ方**: openFDA の drugsfda API（`api.fda.gov/drug/drugsfda.json`、ブランド名 EPIDUO）で申請を特定 → Drugs@FDA の承認書とラベルの PDF を curl で取得（TLS検証あり。accessdata.fda.gov は既定の curl の User-Agent を Akamai が「excessive requests」ページに振り向けたため、ブラウザの User-Agent を指定して再取得）→ pdfminer でテキスト化（`.sources/fda_epiduo_otc_ltr_2026.txt`・`fda_epiduo_otc_label_2026.txt`、README に追記）。
+- **確認できた内容（原文どおり）**
+  - 承認日: 承認書の電子署名 **05/22/2026**（"approved, effective on the date of this letter"）。openFDA でも承認日 20260522。
+  - 製品名: **Differin Epiduo Acne Gel (adapalene/benzoyl peroxide) gel, 0.1%/2.5%**、NDA 220736（Galderma Laboratories, L.P.）。
+  - 成分・濃度: Adapalene 0.1% (retinoid)、Benzoyl Peroxide 2.5%（Drug Facts）。
+  - 区分: "nonprescription use"（承認書）。openFDA の申請区分は "Type 8 - Partial Rx to OTC Switch"（**部分的**な切り替え。処方薬の Epiduo 側がどうなったかは原文で確認していない）。
+  - 対象・効能: "for the treatment of acne in adults and children 12 years and older"（承認書）、Drug Facts の Use は "For the treatment of acne"、12歳未満は "do not use"。
+  - 妊娠: "If pregnant or breast-feeding, ask a doctor before use."（単剤 Differin Gel の OTC 表示と同じ書き方）。
+- **確認していないこと**
+  - FDA のプレスリリース・ニュースの有無（探していない。承認書が原文なので記事の出典は承認書とラベルで足りる）。Galderma・Business Wire の発表文は読んでいない。
+  - 米国の店頭での発売日・価格。
+  - 処方薬 Epiduo（NDA 022320）の現状。openFDA では "Discontinued" と出るが、承認書には「45g は処方薬として販売しているサイズ」とあり、どちらが現状かは原文で未確認。記事では触れない。
+- **編集部への影響**
+  - 「米国で市販（OTC）されているレチノイドはアダパレン0.1%ゲル（単剤）だけ」「唯一」とは**書かない**。書けるのは「2016年にアダパレン0.1%ゲル（単剤）がOTC化、2026年5月にアダパレン0.1%＋過酸化ベンゾイル2.5%の配合ゲルもOTC化」（いずれも効能はニキビ、12歳以上）。
+  - 上の「未確認」7・「米国」の表の Differin の "FIRST FDA-APPROVED OVER-THE-COUNTER TOPICAL RETINOID" は2016年の単剤についての表示で、今回の情報と矛盾しない。
+  - 配合相手の過酸化ベンゾイルは日本では医療用医薬品（本案件では原文未取得）。日本の区分と並べる場合は、日本側の原文を別途取ること。製品名（Differin/Epiduo）の扱いは既存の申し送り（処方薬は一般名のみ）に合わせて編集部・レビュー部が判断する。
