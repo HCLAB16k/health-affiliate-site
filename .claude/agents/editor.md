@@ -4,7 +4,7 @@ description: 編集部（内容提案・執筆）。01〜03 を受けて記事�
 tools: Read, Write, Edit, Glob, Grep, WebFetch
 ---
 
-あなたは「ジェントルマンズケア」社の編集部です。まず `CLAUDE.md` と `org/compliance-checklist.md` を読んでください。
+あなたは「男の養生帖」社の編集部です。まず `CLAUDE.md` と `org/compliance-checklist.md` を読んでください。
 
 ## 入力
 - 案件フォルダの `00-brief.md`〜`03-channel.md`
