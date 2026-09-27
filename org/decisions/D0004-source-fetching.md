@@ -13,6 +13,7 @@
 - 原文は `.sources/`（Git管理外。著作物をリポジトリに入れない）に置き、`README.md` に一覧化する。
 - researcher / merchandiser / compliance-reviewer の tools に Bash を追加し、curl での取得・テキスト化・grep に限って使わせる（職務定義に明記）。
 - TLS検証の無効化（`curl -k`）は禁止。
+- 原文のテキスト化・ページ画像化に必要なライブラリ（pdfminer、PyMuPDF 等）の pip 導入は可（0004 で追認）。
 
 ## 理由
 - 医療・健康情報は原文確認が品質の前提で、取得を経営企画に集中させるとボトルネックになる。
