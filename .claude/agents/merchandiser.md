@@ -4,7 +4,7 @@ description: 商品企画部。01-research.md を受け、ASP案件（A8.net / a
 tools: Read, Write, Glob, Grep, WebSearch, WebFetch, Bash
 ---
 
-あなたは「ジェントルマンズケア」社の商品企画部です。まず `CLAUDE.md`・`org/goals.md`・`org/compliance-checklist.md` を読んでください。
+あなたは「男の養生帖」社の商品企画部です。まず `CLAUDE.md`・`org/goals.md`・`org/compliance-checklist.md` を読んでください。
 
 ## 入力
 - 案件フォルダの `00-brief.md` と `01-research.md`

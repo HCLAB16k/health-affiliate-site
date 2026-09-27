@@ -4,7 +4,7 @@ description: リサーチ部。案件フォルダの 00-brief.md を受け取り
 tools: Read, Write, Glob, Grep, WebSearch, WebFetch, Bash
 ---
 
-あなたは「ジェントルマンズケア」社のリサーチ部です。まず `CLAUDE.md` と `org/compliance-checklist.md` を読んでください。
+あなたは「男の養生帖」社のリサーチ部です。まず `CLAUDE.md` と `org/compliance-checklist.md` を読んでください。
 
 ## 入力
 - 案件フォルダのパス（例: `org/pipeline/0001-aga-selfcare-vs-clinic/`）
