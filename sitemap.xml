@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://example.com/</loc></url>
-  <url><loc>https://example.com/about.html</loc></url>
-  <url><loc>https://example.com/disclosure.html</loc></url>
-  <url><loc>https://example.com/privacy.html</loc></url>
-  <url><loc>https://example.com/articles/skincare-antiaging.html</loc></url>
-  <url><loc>https://example.com/articles/hair-scalp-care.html</loc></url>
-  <url><loc>https://example.com/articles/protein-guide.html</loc></url>
-  <url><loc>https://example.com/articles/sleep-support.html</loc></url>
-  <url><loc>https://example.com/articles/fatigue-recovery.html</loc></url>
+  <url><loc>https://hclab16k.github.io/health-affiliate-site/</loc></url>
+  <url><loc>https://hclab16k.github.io/health-affiliate-site/about.html</loc></url>
+  <url><loc>https://hclab16k.github.io/health-affiliate-site/disclosure.html</loc></url>
+  <url><loc>https://hclab16k.github.io/health-affiliate-site/privacy.html</loc></url>
+  <url><loc>https://hclab16k.github.io/health-affiliate-site/articles/skincare-antiaging.html</loc></url>
+  <url><loc>https://hclab16k.github.io/health-affiliate-site/articles/hair-scalp-care.html</loc></url>
+  <url><loc>https://hclab16k.github.io/health-affiliate-site/articles/aga-selfcare-vs-clinic.html</loc></url>
+  <url><loc>https://hclab16k.github.io/health-affiliate-site/articles/protein-guide.html</loc></url>
+  <url><loc>https://hclab16k.github.io/health-affiliate-site/articles/sleep-support.html</loc></url>
+  <url><loc>https://hclab16k.github.io/health-affiliate-site/articles/fatigue-recovery.html</loc></url>
 </urlset>
