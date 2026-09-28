@@ -7,3 +7,4 @@ exclude:
   - README.md
   - content-calendar.md
   - keywords.csv
+  - scripts
