@@ -26,7 +26,7 @@
 | 03 | `channel-strategist` プラットフォーム戦略部 | `03-channel.md` |
 | 04 | `editor` 編集部 | `04-outline.md` → 記事HTML（`articles/`） |
 | 05 | `compliance-reviewer` レビュー部 | `05-review.md` |
-| — | `analyst` 分析部（公開後・月次） | `org/kpi/`・リライト案件の起票 |
+| — | `analyst` 分析部（公開後・月次。SEO の責任者、D0012） | `org/kpi/`・リライト案件の起票。SEO は `org/seo/README.md` |
 
 - 案件は `org/pipeline/NNNN-slug/` に1フォルダ。書式は `org/templates/`。
 - **部署同士は直接会話しない。書類で引き継ぐ。** 各書類の「前工程への質問・異議」欄を
