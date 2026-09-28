@@ -45,7 +45,10 @@ AIの部署では実行できない、人間（オーナー）にしかできな
 
 ## 夜間の経営企画判断（2026-09-27・要確認）
 
-- [ ] **【案件0007】protein 記事の代わりの商品**: A8 で「FIXIT」と「プロテイン」を検索し、提携できるプログラム名を教えてください（商品企画部の候補リストと照らして決めます。候補リストは `org/pipeline/0007-protein-replacement/02-products.md` にできます）
+- [ ] **【案件0007】protein 記事の代わりの商品**（候補は `org/pipeline/0007-protein-replacement/02-products.md`）。A8 で次を確認してください:
+  1. 今の FIXIT のプログラム（DAILY BASIC）の**成果対象**: DAILY BASIC だけか、ストア全体の購入か。プログラム終了の告知が出ていないか
+  2. 「FIXIT」で検索して、**THINK SIMPLE / MAKE BALANCE など別のプログラム**があるか
+  3. 無ければ「**ビーレジェンド**」「**マイプロテイン**」のプログラムがあるか（あれば報酬と掲載条件も）
   - 回答:
 
 - [x] **【PR #2】3案件（0002・0003・0004）がレビュー PASS。確認してマージしてください**: https://github.com/HCLAB16k/health-affiliate-site/pull/2
