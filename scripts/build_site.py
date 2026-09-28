@@ -33,7 +33,7 @@ def write(path, text):
 
 data = json.loads(read("scripts/site_data.json"))
 cats = data["categories"]
-arts = sorted(data["articles"], key=lambda a: a.get("updated") or a["date"], reverse=True)
+arts = sorted(data["articles"], key=lambda a: a["date"], reverse=True)
 by_cat = {c["id"]: [a for a in arts if a["category"] == c["id"]] for c in cats}
 
 
