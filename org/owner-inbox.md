@@ -26,12 +26,12 @@ AIの部署では実行できない、人間（オーナー）にしかできな
   - 代替案: 設定を変えない場合は、`org/pipeline/0001-aga-selfcare-vs-clinic/01-research.md` の「※抜粋確認」の項目を、あなたが原文PDFで確認してください
   - 回答: 2026-09-27 オーナーが設定変更。curl で取得可能になった（WebFetch は引き続き遮断、brand.taisho.co.jp は証明書エラー）
 
-- [ ] **Google Search Console に登録し、サイトマップを送信**（**10月中旬のビタミンD記事公開の前に**）
+- [x] **Google Search Console に登録し、サイトマップを送信**（**10月中旬のビタミンD記事公開の前に**）
   - 進捗: 2026-09-27 確認用メタタグを main の index.html に設置し、公開サイトへの反映を確認済み。残り: Search Console で「確認」→ サイトマップ送信
   - サイトマップURL: `https://hclab16k.github.io/health-affiliate-site/sitemap.xml`
   - 補足: GitHub Pages のプロジェクトサイトでは `robots.txt` がドメイン直下に置かれないため、
     検索エンジンは robots.txt 経由でサイトマップを見つけられません。Search Console から直接送信してください。
-  - 回答:
+  - 回答: 2026-09-28 所有権確認（HTMLファイル方式、googlef8290cdc0cd76b31.html）・sitemap.xml 送信完了。サイトマップの12URLはすべて200を確認。誤って作成された「…/sitemap.xml/」プロパティは削除を依頼済み
 - [ ] **Google Analytics 4 を導入するか決める**（導入する場合は測定IDを教えてください。記事への埋め込みはAI側で行います）
   - 追記（2026-09-27）: 記事間の送客（例: ヘアケア記事→AGA記事）は GA4 が無いと測れません。案件0003の主KPIのため、優先度を上げてください
   - 回答:
