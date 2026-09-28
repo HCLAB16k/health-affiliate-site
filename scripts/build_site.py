@@ -33,7 +33,7 @@ def write(path, text):
 
 data = json.loads(read("scripts/site_data.json"))
 cats = data["categories"]
-arts = sorted(data["articles"], key=lambda a: a["date"], reverse=True)
+arts = sorted(data["articles"], key=lambda a: a.get("updated") or a["date"], reverse=True)
 by_cat = {c["id"]: [a for a in arts if a["category"] == c["id"]] for c in cats}
 
 
@@ -52,7 +52,7 @@ def card(a, prefix):
     return (
         f'        <a class="card" href="{prefix}articles/{a["slug"]}.html">\n'
         f'          <div class="thumb"><img src="{prefix}images/thumbs/{a["slug"]}.svg" alt="" width="400" height="300" loading="lazy"><span class="tag">{a["tag"]}</span></div>\n'
-        f'          <span class="date">公開 {fmt_date(a["date"])}</span>\n'
+        f'          <span class="date">公開 {fmt_date(a["date"])}' + (f' / 更新 {fmt_date(a["updated"])}' if a.get("updated") else '') + '</span>\n'
         f'          <h3>{a["title"]}</h3>\n'
         f'          <p>{a["desc"]}</p>\n'
         f'          <span class="more">+ 記事を読む</span>\n'
