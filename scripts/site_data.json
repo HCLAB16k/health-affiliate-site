@@ -23,9 +23,23 @@
       "name": "睡眠・疲労",
       "label": "REST",
       "lead": "睡眠や疲れが気になるときに、生活習慣の見直しと、サプリメントに使われる成分の特徴を整理した記事です。"
+    },
+    {
+      "id": "oral",
+      "name": "オーラルケア",
+      "label": "ORAL",
+      "lead": "歯みがき・舌の清掃・歯間清掃・洗口液など、毎日の口のケアで使う道具と考え方を、公的機関や学会の資料で整理した記事です。"
     }
   ],
   "articles": [
+    {
+      "slug": "oral-care-basics",
+      "category": "oral",
+      "date": "2026-09-28",
+      "title": "口臭ケアの基本",
+      "tag": "ORAL / JAPAN, UK &amp; US",
+      "desc": "舌の清掃・フロス・洗口液・電動歯ブラシ。日本・英国・米国の公的機関の見解の違いと根拠の強さを整理"
+    },
     {
       "slug": "winter-vitamin-d",
       "category": "body",
