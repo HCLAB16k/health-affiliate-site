@@ -69,5 +69,5 @@
 ## 7. 記事の技術ルール
 
 - 記事は `articles/*.html`。既存記事（例: `articles/protein-guide.html`）のHTML構造・クラス名を踏襲する。
-- 新記事を足したら `sitemap.xml` と `index.html` の導線を更新する。
+- 新記事を足したら `scripts/site_data.json` に記事（カテゴリ・公開日・カード文言）を1件追加し、`python3 scripts/build_site.py` を実行する（トップの最新記事・カテゴリページ・全ページのカテゴリバー・`sitemap.xml` をまとめて更新）。サムネイルは `images/thumbs/<slug>.svg`。
 - 外部アフィリエイトリンクには `rel="nofollow"`（推奨は `rel="sponsored nofollow"`）を付ける。
