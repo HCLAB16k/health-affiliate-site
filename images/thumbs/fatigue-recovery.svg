@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
 <rect width="400" height="300" fill="#dcd5f5"/>
 <g fill="none" stroke="#0b2559" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
 <ellipse cx="160" cy="175" rx="120" ry="55" fill="#ffdd00" stroke="none"/>
