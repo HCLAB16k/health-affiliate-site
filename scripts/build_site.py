@@ -52,7 +52,7 @@ def card(a, prefix):
     return (
         f'        <a class="card" href="{prefix}articles/{a["slug"]}.html">\n'
         f'          <div class="thumb"><img src="{prefix}images/thumbs/{a["slug"]}.svg" alt="" width="400" height="300" loading="lazy"><span class="tag">{a["tag"]}</span></div>\n'
-        f'          <span class="date">{fmt_date(a["date"])}</span>\n'
+        f'          <span class="date">公開 {fmt_date(a["date"])}</span>\n'
         f'          <h3>{a["title"]}</h3>\n'
         f'          <p>{a["desc"]}</p>\n'
         f'          <span class="more">+ 記事を読む</span>\n'
@@ -136,9 +136,8 @@ for f in files:
 
 # ---------- sitemap ----------
 sm = read("sitemap.xml")
-for c in cats:
-    loc = f"{SITE}category/{c['id']}.html"
-    if loc not in sm:
+for loc in [f"{SITE}articles/{a['slug']}.html" for a in arts] + [f"{SITE}category/{c['id']}.html" for c in cats]:
+    if f"<loc>{loc}</loc>" not in sm:
         sm = sm.replace("</urlset>", f"  <url><loc>{loc}</loc></url>\n</urlset>")
 write("sitemap.xml", sm)
 print("categories:", {c["id"]: len(by_cat[c["id"]]) for c in cats}, "latest:", [a["slug"] for a in arts[: data["latest_count"]]])

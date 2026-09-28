@@ -550,6 +550,8 @@ footer.site-footer p { margin-top: 30px; color: #7f828a; font-size: 0.76rem; }
   header.site-header .inner { flex-direction: column; align-items: flex-start; }
   nav.site-nav { gap: 4px 18px; }
   nav.cat-nav { padding: 0 16px; }
+  nav.cat-nav .inner { gap: 4px 16px; }
+  nav.cat-nav a { font-size: 0.76rem; }
   main.category-page { padding: 32px 0 64px; }
   .wrap, .topics .inner { padding: 0 16px; }
   main { padding: 28px 16px 64px; }
