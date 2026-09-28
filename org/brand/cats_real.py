@@ -2,23 +2,25 @@
 def cat(fur, line, inner, iris, nose, whisker, look=3):
     body = ('<path d="M163 92 C163 70 167 48 170 30 C180 42 188 54 196 62 Q212 57 228 62 '
             'C236 50 244 38 252 26 C259 46 263 74 257 94 C258 114 248 131 233 141 '
-            'C248 170 257 228 251 282 C250 293 238 297 226 293 L204 293 '
-            'C160 297 118 294 100 272 C86 244 98 192 140 160 C158 146 164 122 163 92 Z" fill="%s"/>' % fur)
-    tail = ('<path d="M112 284 C74 292 42 286 22 252 C14 238 22 229 31 236 '
-            'C48 262 74 272 112 268 Z" fill="%s"/>' % fur)
+            'C245 172 251 228 247 282 C246 293 236 297 226 293 L208 293 '
+            'C172 296 142 294 130 274 C118 246 126 196 153 164 C164 150 165 124 163 92 Z" fill="%s"/>' % fur)
+    tail = ('<path d="M150 292 C96 296 54 288 32 254 C24 240 32 231 41 238 '
+            'C58 264 96 276 140 276 Z" fill="%s"/>' % fur)
     ears = ('<path d="M174 44 C181 54 187 60 193 65 L178 76 Z" fill="%s"/>'
             '<path d="M248 40 C246 52 243 62 238 68 L227 64 Z" fill="%s"/>' % (inner, inner))
     contours = ('<g fill="none" stroke="%s" stroke-width="1.6" stroke-linecap="round" opacity="0.9">'
                 '<path d="M222 196 C226 236 227 266 224 292"/>'
-                '<path d="M236 204 C240 240 241 268 238 292"/>'
-                '<path d="M146 226 C170 246 178 270 172 292"/>'
+                '<path d="M235 204 C238 240 238 268 236 292"/>'
+                '<path d="M158 228 C177 248 183 270 179 292"/>'
                 '<path d="M224 292 c-2 -5 -8 -5 -10 0 M238 293 c-2 -5 -8 -5 -10 0"/>'
                 '</g>' % line)
     eyes = ''
-    for ex in (193, 234):
-        eyes += ('<path d="M%d 97 Q%d 79 %d 97 Q%d 113 %d 97 Z" fill="%s" stroke="#050505" stroke-width="1.4"/>' % (ex-14, ex, ex+14, ex, ex-14, iris))
-        eyes += '<ellipse cx="%d" cy="97" rx="3" ry="10" fill="#050505"/>' % (ex+look)
-        eyes += '<circle cx="%d" cy="92" r="2.2" fill="#fff"/>' % (ex+look+4)
+    for ex, d in ((193, -1), (234, 1)):
+        # sharp almond, outer corner raised
+        o, i = ex + d*15, ex - d*13
+        eyes += ('<path d="M%d 93 Q%d 82 %d 100 Q%d 107 %d 93 Z" fill="%s" stroke="#050505" stroke-width="1.5" stroke-linejoin="miter"/>' % (o, ex + d*2, i, ex + d*2, o, iris))
+        eyes += '<ellipse cx="%d" cy="96" rx="2" ry="8.5" fill="#050505"/>' % (ex+look)
+        eyes += '<circle cx="%d" cy="92" r="1.6" fill="#fff"/>' % (ex+look+3)
     face = ('<path d="M208 114 h12 l-6 7 z" fill="%s"/>'
             '<path d="M214 121 v4 M214 125 q-5 5 -10 2 M214 125 q5 5 10 2" fill="none" stroke="%s" stroke-width="1.4" stroke-linecap="round"/>' % (nose, line))
     wh = '<g stroke="%s" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.85">' % whisker
