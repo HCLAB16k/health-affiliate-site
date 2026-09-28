@@ -492,6 +492,14 @@ footer.site-footer p { margin-top: 30px; color: #7f828a; font-size: 0.76rem; }
   .articles { padding: 64px 0 72px; }
   .category-grid { grid-template-columns: minmax(0, 1fr); gap: 48px; }
   .affiliate-box { padding: 18px 16px 22px; }
-  table.compare { display: block; overflow-x: auto; }
+  /* tables become one card per row on phones (labels from data-label) */
+  table.compare, table.compare tbody, table.compare tr, table.compare td { display: block; width: 100%; }
+  table.compare { margin: 18px 0 24px; font-size: 0.9rem; }
+  table.compare tr:first-child { display: none; }
+  table.compare tr { background: var(--surface); border: 1px solid var(--line); border-top: 4px solid var(--ink); margin: 0 0 14px; }
+  table.compare td { min-width: 0; border: 0; border-bottom: 1px solid var(--line); padding: 10px 14px; background: none; }
+  table.compare td:last-child { border-bottom: 0; }
+  table.compare td::before { content: attr(data-label); display: block; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.04em; color: var(--muted); margin-bottom: 2px; }
+  table.compare td:first-child { font-weight: 700; font-size: 0.98rem; }
   footer.site-footer { padding: 48px 16px 34px; }
 }
