@@ -1,0 +1,95 @@
+{
+  "categories": [
+    {
+      "id": "skin",
+      "name": "スキンケア",
+      "label": "SKIN",
+      "lead": "洗顔・保湿・紫外線対策の基本と、化粧品・医薬部外品・医薬品で表示できることの違いを整理した記事です。"
+    },
+    {
+      "id": "hair",
+      "name": "ヘア・AGA",
+      "label": "HAIR",
+      "lead": "抜け毛・薄毛が気になり始めたときに、育毛剤・発毛剤・医療機関の違いと確認したいことを整理した記事です。"
+    },
+    {
+      "id": "body",
+      "name": "ボディ・栄養",
+      "label": "BODY",
+      "lead": "プロテインの種類と選び方や、ビタミンDの摂取の目安など、食事と栄養にかかわる記事です。"
+    },
+    {
+      "id": "rest",
+      "name": "睡眠・疲労",
+      "label": "REST",
+      "lead": "睡眠や疲れが気になるときに、生活習慣の見直しと、サプリメントに使われる成分の特徴を整理した記事です。"
+    }
+  ],
+  "articles": [
+    {
+      "slug": "winter-vitamin-d",
+      "category": "body",
+      "date": "2026-09-27",
+      "title": "季節の栄養：冬のビタミンD",
+      "tag": "SEASONAL / UK &amp; JAPAN",
+      "desc": "英国・米国・日本の摂取の目安の違いと上限量を、公的資料で整理"
+    },
+    {
+      "slug": "retinoids-japan-vs-overseas",
+      "category": "skin",
+      "date": "2026-09-27",
+      "title": "レチノール・アダパレン・トレチノインの違い",
+      "tag": "SKIN / JAPAN &amp; US",
+      "desc": "化粧品・医薬部外品・処方薬の区分で、表示できる効能が違う。日本と米国の扱いを公的資料で整理"
+    },
+    {
+      "slug": "aga-selfcare-vs-clinic",
+      "category": "hair",
+      "date": "2026-09-27",
+      "title": "AGA対策：セルフケアとクリニックの違い",
+      "tag": "HAIR / CLINIC",
+      "desc": "市販の発毛剤・育毛剤で様子を見るか、受診するか。判断の目安を中立に整理"
+    },
+    {
+      "slug": "hair-scalp-care",
+      "category": "hair",
+      "date": "2026-09-13",
+      "title": "ヘア・スカルプケア",
+      "tag": "HAIR",
+      "desc": "薄毛・抜け毛が気になり始めたら。頭皮ケアの成分と選び方"
+    },
+    {
+      "slug": "skincare-antiaging",
+      "category": "skin",
+      "date": "2026-09-13",
+      "title": "スキンケア",
+      "tag": "SKIN",
+      "desc": "30代からの男のスキンケア。年齢に応じたお手入れで使われる成分の選び方"
+    },
+    {
+      "slug": "protein-guide",
+      "category": "body",
+      "date": "2026-09-13",
+      "title": "筋トレ・ボディメイク",
+      "tag": "BODY",
+      "desc": "スーツが似合う体型を意識する人のための、プロテインの種類と選び方"
+    },
+    {
+      "slug": "sleep-support",
+      "category": "rest",
+      "date": "2026-09-13",
+      "title": "睡眠と生活リズム",
+      "tag": "SLEEP",
+      "desc": "睡眠を意識したサプリ成分の違いと、生活習慣の見直しのポイント"
+    },
+    {
+      "slug": "fatigue-recovery",
+      "category": "rest",
+      "date": "2026-09-13",
+      "title": "疲労・エナジーマネジメント",
+      "tag": "FATIGUE",
+      "desc": "働き盛りのだるさが気になる方へ。サプリ成分の特徴と選び方"
+    }
+  ],
+  "latest_count": 6
+}
