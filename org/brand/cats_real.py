@@ -44,4 +44,12 @@ def single(c, bg="#ebebec"):
     return f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 320"><rect width="300" height="320" fill="{bg}"/>' + cat(**c, look=0) + '</svg>\n'
 
 open('real-pair.svg','w').write(pair())
+
+def icon():
+    p = pair(bg=None)
+    inner = p[p.index('>')+1:p.rindex('</svg>')]
+    return ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="135 -2 270 270">'
+            '<rect x="135" y="-2" width="270" height="270" fill="#ffdd00"/>' + inner + '</svg>\n')
+
+open('icon-real.svg','w').write(icon())
 open('real-black.svg','w').write(single(BLACK, '#ffffff'))
