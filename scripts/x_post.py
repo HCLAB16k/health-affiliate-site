@@ -78,7 +78,24 @@ def validate(item):
         problems.append("text must contain the article URL")
     if weighted_length(item["text"]) > 280:
         problems.append(f"text too long ({weighted_length(item['text'])} > 280)")
+    if article_has_ad_links(item["article"]) and "#PR" not in item["text"]:
+        problems.append(f"{item['article']} renders affiliate links but the text has no #PR")
     return problems
+
+
+def article_has_ad_links(article):
+    """True if the article renders a CTA or an external link outside HTML
+    comments (checked at posting time, so a restored affiliate-box is caught)."""
+    if not os.path.exists(article):
+        return False
+    with open(article, encoding="utf-8") as f:
+        html = re.sub(r"<!--.*?-->", "", f.read(), flags=re.S)
+    if 'class="cta-btn"' in html:
+        return True
+    for href in re.findall(r'<a\s[^>]*href="(https?:)?//([^/"]+)', html):
+        if not href[1].endswith("hclab16k.github.io"):
+            return True
+    return False
 
 
 def pct(s):
