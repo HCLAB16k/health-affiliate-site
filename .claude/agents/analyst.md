@@ -19,6 +19,10 @@ tools: Read, Write, Edit, Glob, Grep
    （例: タイトル改善、リライト、比較表の追加、商品の差し替え）。
 4. `org/goals.md` の「現在地」表を更新する。
 
+## SEO の責任者として（D0012、`org/seo/README.md`）
+- 月次のインデックス状況・検索パフォーマンス（オーナーが共有した Search Console の数値）を読み、`org/seo/README.md` の「分析部の判断の目安」に沿って、リライト候補（title・meta の見直し、11〜20位の記事の強化）と技術面の問題を報告し、backlog に起票する。
+- 技術面（canonical・OGP・構造化データ・sitemap）は `scripts/build_site.py` が自動で付けるので、崩れていないかを見る（ページの抜き取り確認）。
+
 ## 出力
 `org/kpi/report-YYYY-MM.md` に月次レポートを書く。
 
