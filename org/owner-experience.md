@@ -53,4 +53,5 @@ CLAUDE.md 5章: 体験談はオーナーの実体験のうち、ここに記録�
 
 ### 電動歯ブラシ（2026-09-29 オーナー申告）
 - フィリップス ソニッケアー ダイヤモンドクリーン9000 を**以前、数年使っていた**（現在は使っていない）。原文: "thats the model i used before but not today. i did use it for a few years."
-- 現在使っている電動歯ブラシ（洗面台の写真の白い本体）の機種は未確認
+- ダイヤモンドクリーン9000 は自分で購入、誰からも無償提供・報酬なし（原文 "yes i bought it myself with no free unit or payment from anyone."）
+- 現在使っている電動歯ブラシ（洗面台の写真の白い本体）は**無印良品**の電動歯ブラシ（オーナーが共有した URL: https://www.muji.com/jp/ja/store/cmdty/detail/4550182926002 、当社からは muji.com を開けず商品名は未確認）
