@@ -58,3 +58,8 @@ CLAUDE.md 5章: 体験談はオーナーの実体験のうち、ここに記録�
 
 ### ヘアケア（2026-09-29）
 - オーナーが RETØUCH（レタッチ）ケアミルク（洗い流さないトリートメント、100ml）の Amazon リンクを共有。洗面台の写真の黒いボトル「R CARE MILK」と**同じ商品（オーナー確認）**。Amazon の販売元はメーカー（ブランド）の自社ストア（オーナー確認）。自分で購入・無償提供も報酬もなし（オーナー確認、2026-09-29）。Amazon リンク: ASIN B0BNMNHZ8D、linkId 04fdbba5eda3e425bef3efb6db919b3c
+
+### 追加の使用品（2026-09-29 オーナー申告）
+- パナソニック ボディトリマー ボディシェーバー ER-NGKJ3-S（Amazon.co.jp 限定、ASIN B0F2RJWGVJ、販売元 Amazon.co.jp＝オーナーのスクリーンショット）。いま使用
+- plus eau（プリュスオー）メロウリュクスマスク ジャータイプ 200g（ASIN B08QSTC47P、販売元 Amazon.co.jp＝オーナーのスクリーンショット）。いま使用
+- 2品とも自費購入、誰からも何も受け取っていない（原文 "i bought this myself, not receiving anything from anyone. same for the trimmer."）
