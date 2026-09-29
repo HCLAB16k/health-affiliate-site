@@ -87,7 +87,7 @@ def article_has_ad_links(article):
     """True if the article renders a CTA or an external link outside HTML
     comments (checked at posting time, so a restored affiliate-box is caught)."""
     if not os.path.exists(article):
-        return False
+        raise SystemExit(f"article not found: {article}")
     with open(article, encoding="utf-8") as f:
         html = re.sub(r"<!--.*?-->", "", f.read(), flags=re.S)
     if 'class="cta-btn"' in html:
