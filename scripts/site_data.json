@@ -121,5 +121,15 @@
       "updated": "2026-09-27"
     }
   ],
-  "latest_count": 6
+  "latest_count": 6,
+  "pages": [
+    {
+      "file": "tools.html",
+      "updated": "2026-09-29"
+    },
+    {
+      "file": "sale.html",
+      "updated": "2026-09-29"
+    }
+  ]
 }

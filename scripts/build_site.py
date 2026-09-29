@@ -200,6 +200,7 @@ for f in files:
 
 # ---------- sitemap ----------
 urls = [(SITE, None), (SITE + "about.html", None), (SITE + "disclosure.html", None), (SITE + "privacy.html", None)]
+urls += [(SITE + p["file"], p.get("updated")) for p in data.get("pages", [])]
 urls += [(f"{SITE}category/{c['id']}.html", max([a.get("updated") or a["date"] for a in by_cat[c["id"]]] or [None])) for c in cats]
 urls += [(f"{SITE}articles/{a['slug']}.html", a.get("updated") or a["date"]) for a in sorted(data["articles"], key=lambda a: a["date"])]
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
