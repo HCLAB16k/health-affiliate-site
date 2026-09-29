@@ -30,6 +30,7 @@
 | 2026-09-29 | 04 | 執筆受領 | 原稿は FEEL NATURAL のリンク待ち（href="#"）のため、公開物（articles/）には置かず `org/pipeline/0018-protein-rewrite/draft-protein-guide.html` に保管（他の PR のマージで未完成の原稿が公開されないように）。レビューは原稿で先行。判断: ①計測画像は A8 コードの a と img をセットで差し替え ②02⑤の矛盾は 2 を優先（editor の判断を採用） ③MAKE BALANCE の値は公開直前に取り直し ④winter-vitamin-d の関連記事リンクの文言は公開時に新 title に合わせる ⑤site_data は title「プロテインの選び方」・tag「BODY」のまま・desc は 04 の案 | 未完成の公開防止 |
 | 2026-09-29 | 05 | 差し戻し1回目の対応受領 | 採用。推奨10の不使用の引用は削除（不使用表示ガイドラインを照合できないため。原材料の事実だけで足りる）。10/8 の予約投稿は現行の中立文のまま（新版の公開前後どちらでも本文と整合）。新版の公開時に 04 の文案へ差し替えるかはその時点で判断 | 事実の範囲 |
 | 2026-09-29 | 05 | 第2回 PASS（リンク差し替えは C1〜C7 条件付き） | 任意 a・b を反映（C1 の範囲）。公開は FEEL NATURAL の A8 リンク（D16）受領後、C3（当日の数値の取り直し）・C6（site_data・build・winter-vitamin-d の文言）とあわせて行う | D0006 |
+| 2026-09-29 | 05 | リンク差し替え（C1〜C7） | 公開。C1: 差分は a＋img・LINK_PENDING 削除・site_data・winter-vitamin-d の文言のみ。C2: オーナーの A8 テキストリンク（FIXIT、a と img の a8mat 一致、飛び先 feel_natural_plane）、cta-btn・sponsored nofollow・文言「公式サイトで詳細を見る」。C3: 同日（9/29）に2品の価格・在庫を公式で再確認（5,980円・3,680円、在庫あり、変更なし）。C4: 当社はトラッキングURLを開かない方針のため、飛び先の商品ページ（200）と、同じ形式の MAKE BALANCE リンクで A8 のクリックが計測されている事実（D1）で代替。オーナーに公開後の1クリック確認を依頼。C5: 成果条件は記事の適否に影響しない。C6: site_data の title・desc・updated、build、winter-vitamin-d の文言を反映 | 05 第1回の条件 |
 
 ## 差し戻し回数
 | 工程 | 回数 |
