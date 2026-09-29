@@ -21,7 +21,7 @@
 - **センシティブな内容の設定**: 変更不要
 
 ## 開発者の設定（API キー）
-1. developer.x.com で開発者アカウントを申請し、プロジェクトとアプリを作成（無料枠で足りる見込み。1日1本の投稿）
+1. console.x.com で開発者アカウントを作成し、アプリを作成（2026-09-29 時点の申込画面は「Developer PPU（従量課金）Pilot」。投稿ごとに課金される可能性があるため、料金は管理画面で確認してからクレジット・カードを登録する。支出はオーナーの判断）
 2. アプリの「User authentication settings」で **Read and write** にする（先に権限を変えてから鍵を作る。後で変えた場合は Access Token を作り直す）
 3. **API Key / API Secret / Access Token / Access Token Secret** の4つを発行
 4. GitHub のリポジトリ → Settings → Secrets and variables → Actions → New repository secret で、`X_API_KEY`・`X_API_SECRET`・`X_ACCESS_TOKEN`・`X_ACCESS_SECRET` として登録（**チャットや書類に貼らない**）
