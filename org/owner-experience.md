@@ -50,3 +50,11 @@ CLAUDE.md 5章: 体験談はオーナーの実体験のうち、ここに記録�
 ### 医療脱毛（2026-09-29 オーナー申告）
 - 原文: "I've done myself beard removal and body hair removal with ゴリラクリニック, and the results were great, I have very little hair left and am happy with it."
 - 扱い（経営企画の暫定、脱毛記事 #3 のレビューで確定）: 医療広告ガイドラインは**患者の体験談**を禁止（checklist 4章）。クリニックへのリンクを置く記事では、①クリニック名と結びつけた体験 ②「結果がよかった」「ほとんど生えていない」等の効果の記述 は**書かない**。使えるのは、クリニック名・効果を伴わない手順の事実（カウンセリングの流れ、通う前の準備など）に限る見込み。ゴリラクリニック（ゴリラ脱毛）と提携する場合は、なおさら体験を結びつけない
+
+### 電動歯ブラシ（2026-09-29 オーナー申告）
+- フィリップス ソニッケアー ダイヤモンドクリーン9000 を**以前、数年使っていた**（現在は使っていない）。原文: "thats the model i used before but not today. i did use it for a few years."
+- ダイヤモンドクリーン9000 は自分で購入、誰からも無償提供・報酬なし（原文 "yes i bought it myself with no free unit or payment from anyone."）
+- **訂正（2026-09-29 オーナー）**: 無印良品（URL https://www.muji.com/jp/ja/store/cmdty/detail/4550182926002）は**舌ブラシ**。現在の電動歯ブラシは**フィリップス ソニッケアー 3100シリーズ HX4033/21（ホワイト）**（Amazon ASIN B0GR9JX426、出荷元・販売元 Amazon.co.jp＝経営企画が確認）
+
+### ヘアケア（2026-09-29）
+- オーナーが RETØUCH（レタッチ）ケアミルク（洗い流さないトリートメント、100ml）の Amazon リンクを共有。洗面台の写真の黒いボトル「R CARE MILK」と**同じ商品（オーナー確認）**。Amazon の販売元はメーカー（ブランド）の自社ストア（オーナー確認）。自分で購入・無償提供も報酬もなし（オーナー確認、2026-09-29）。Amazon リンク: ASIN B0BNMNHZ8D、linkId 04fdbba5eda3e425bef3efb6db919b3c
