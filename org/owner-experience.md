@@ -54,7 +54,7 @@ CLAUDE.md 5章: 体験談はオーナーの実体験のうち、ここに記録�
 ### 電動歯ブラシ（2026-09-29 オーナー申告）
 - フィリップス ソニッケアー ダイヤモンドクリーン9000 を**以前、数年使っていた**（現在は使っていない）。原文: "thats the model i used before but not today. i did use it for a few years."
 - ダイヤモンドクリーン9000 は自分で購入、誰からも無償提供・報酬なし（原文 "yes i bought it myself with no free unit or payment from anyone."）
-- 現在使っている電動歯ブラシ（洗面台の写真の白い本体）は**無印良品**の電動歯ブラシ（オーナーが共有した URL: https://www.muji.com/jp/ja/store/cmdty/detail/4550182926002 、当社からは muji.com を開けず商品名は未確認）
+- **訂正（2026-09-29 オーナー）**: 無印良品（URL https://www.muji.com/jp/ja/store/cmdty/detail/4550182926002）は**舌ブラシ**。現在の電動歯ブラシは**フィリップス ソニッケアー 3100シリーズ HX4033/21（ホワイト）**（Amazon ASIN B0GR9JX426、出荷元・販売元 Amazon.co.jp＝経営企画が確認）
 
 ### ヘアケア（2026-09-29）
 - オーナーが RETØUCH（レタッチ）ケアミルク（洗い流さないトリートメント、100ml）の Amazon リンクを共有。洗面台の写真の黒いボトル「R CARE MILK」と**同じ商品（オーナー確認）**。Amazon の販売元はメーカー（ブランド）の自社ストア（オーナー確認）。自分で購入・無償提供も報酬もなし（オーナー確認、2026-09-29）。Amazon リンク: ASIN B0BNMNHZ8D、linkId 04fdbba5eda3e425bef3efb6db919b3c
