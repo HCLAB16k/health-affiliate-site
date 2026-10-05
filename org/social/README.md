@@ -4,7 +4,7 @@
 1. マーケティング部（`marketer`）が投稿文を `org/social/queue/<投稿日>-<slug>.json` に書く。
 2. レビュー部が記事と同じ基準で審査（compliance-checklist 3章・4章）。結果は案件フォルダの 05-review.md か `org/reviews/`。
 3. PASS 後、経営企画が PR をマージ（D0006・D0010）。
-4. GitHub Actions（`.github/workflows/x-post.yml`）が毎日 12:07（日本時間）に `scripts/x_post.py` を実行し、`date` が今日のものを投稿する。
+4. GitHub Actions（`.github/workflows/x-post.yml`）が毎日、夜の時間帯（20:37・21:37・22:37 日本時間に起動。GitHub の起動は遅れることがあるため、19〜23時の窓に入った最初の実行だけが投稿し、同じ日の2回目以降は日付ごとのキャッシュで止まる）に `scripts/x_post.py` を実行し、`date` が今日のものを投稿する。2026-10-05 変更: 12:07 の予定が約6時間遅れて夕方に実行されていたため、30代以上の会社員が X を見やすい夜（21時前後）に合わせた。
 
 ## ファイル形式
 ```json

@@ -1,9 +1,15 @@
 # Daily X (Twitter) announcement of reviewed posts in org/social/queue/ (decision D0010).
+# Target: around 21:00 JST (evening, when office workers are most active on X).
+# GitHub's scheduler can start jobs hours late, so the job is scheduled several
+# times in the evening; the first run inside the window posts, and a per-day
+# cache key stops the later runs from posting again.
 name: X post
 
 on:
   schedule:
-    - cron: "7 3 * * *" # 12:07 JST every day
+    - cron: "37 11 * * *" # 20:37 JST
+    - cron: "37 12 * * *" # 21:37 JST
+    - cron: "37 13 * * *" # 22:37 JST
   workflow_dispatch:
     inputs:
       dry_run:
@@ -29,7 +35,19 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Japan date
+        id: jst
+        run: echo "date=$(TZ=Asia/Tokyo date +%F)" >> "$GITHUB_OUTPUT"
+      - name: Already posted today?
+        if: github.event_name == 'schedule'
+        id: done
+        uses: actions/cache/restore@v4
+        with:
+          path: .x-posted
+          key: x-posted-${{ steps.jst.outputs.date }}
       - name: Post today's items
+        if: steps.done.outputs.cache-hit != 'true'
+        id: post
         env:
           X_API_KEY: ${{ secrets.X_API_KEY }}
           X_API_SECRET: ${{ secrets.X_API_SECRET }}
@@ -37,8 +55,21 @@ jobs:
           X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
           DATE_OVERRIDE: ${{ inputs.date }}
+          SCHEDULED: ${{ github.event_name == 'schedule' }}
         run: |
+          set -o pipefail
           args=()
           if [ "$DRY_RUN" = "true" ]; then args+=(--dry-run); fi
           if [ -n "$DATE_OVERRIDE" ]; then args+=(--date "$DATE_OVERRIDE"); fi
-          python3 scripts/x_post.py "${args[@]}"
+          if [ "$SCHEDULED" = "true" ]; then args+=(--window 19-23); fi
+          python3 scripts/x_post.py "${args[@]}" | tee out.txt
+          if grep -q "HTTP 201\|already posted" out.txt; then echo "posted=true" >> "$GITHUB_OUTPUT"; fi
+      - name: Remember today's post
+        if: github.event_name == 'schedule' && steps.post.outputs.posted == 'true'
+        run: mkdir -p .x-posted && touch .x-posted/done
+      - name: Save marker
+        if: github.event_name == 'schedule' && steps.post.outputs.posted == 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: .x-posted
+          key: x-posted-${{ steps.jst.outputs.date }}
