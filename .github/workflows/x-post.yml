@@ -1,15 +1,16 @@
 # Daily X (Twitter) announcement of reviewed posts in org/social/queue/ (decision D0010).
 # Target: around 21:00 JST (evening, when office workers are most active on X).
-# GitHub's scheduler can start jobs hours late, so the job is scheduled several
-# times in the evening; the first run inside the window posts, and a per-day
-# cache key stops the later runs from posting again.
+# GitHub's scheduler can start jobs hours late, so the job is scheduled hourly;
+# the first run that starts inside the window posts, and a per-day cache key
+# stops the later runs from posting again.
 name: X post
 
 on:
   schedule:
-    - cron: "37 11 * * *" # 20:37 JST
-    - cron: "37 12 * * *" # 21:37 JST
-    - cron: "37 13 * * *" # 22:37 JST
+    # Hourly from 12:37 to 22:37 JST. GitHub has started these jobs about
+    # 6-7 hours late, so start early; only a run that actually begins inside
+    # the 19-23h JST window posts.
+    - cron: "37 3-13 * * *"
   workflow_dispatch:
     inputs:
       dry_run:
