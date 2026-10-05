@@ -136,7 +136,15 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--date", help="override date (YYYY-MM-DD, Japan time)")
+    ap.add_argument("--window", help="post only if the Japan-time hour is within START-END (e.g. 19-23)")
     args = ap.parse_args()
+
+    if args.window and not args.date:
+        start, end = (int(x) for x in args.window.split("-"))
+        hour = datetime.datetime.now(JST).hour
+        if not start <= hour <= end:
+            print(f"outside posting window {args.window} JST (now {hour}h); skipping")
+            return 0
 
     date = args.date or datetime.datetime.now(JST).date().isoformat()
     items = load_items(date)

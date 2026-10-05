@@ -27,7 +27,7 @@
 3. **API Key / API Secret / Access Token / Access Token Secret** の4つを発行
 4. GitHub のリポジトリ → Settings → Secrets and variables → Actions → New repository secret で、`X_API_KEY`・`X_API_SECRET`・`X_ACCESS_TOKEN`・`X_ACCESS_SECRET` として登録（**チャットや書類に貼らない**）
 5. テスト: GitHub → Actions →「X post」→ Run workflow（dry_run にチェック、date に `2026-10-05`）で、投稿せずに文面を確認
-6. 本番のテスト（任意）: dry_run を外して、キューに無い日付で実行 → 投稿が無いので何も起きないことを確認。最初の実投稿は 10/5 の 12:07（日本時間）
+6. 本番のテスト（任意）: dry_run を外して、キューに無い日付で実行 → 投稿が無いので何も起きないことを確認。最初の実投稿は 10/5（投稿は夜 19〜23時の窓、主に21時前後。2026-10-05 に変更）
 
 ## 運用
 - 投稿は自動（D0010）。オーナーは、X の通知で返信・引用・スパムを週1回程度見る
