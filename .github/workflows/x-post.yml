@@ -9,7 +9,7 @@ on:
   schedule:
     # Hourly from 12:37 to 22:37 JST. GitHub has started these jobs about
     # 6-7 hours late, so start early; only a run that actually begins inside
-    # the 19-23h JST window posts.
+    # the 18-23h JST window posts.
     - cron: "37 3-13 * * *"
   workflow_dispatch:
     inputs:
@@ -62,7 +62,7 @@ jobs:
           args=()
           if [ "$DRY_RUN" = "true" ]; then args+=(--dry-run); fi
           if [ -n "$DATE_OVERRIDE" ]; then args+=(--date "$DATE_OVERRIDE"); fi
-          if [ "$SCHEDULED" = "true" ]; then args+=(--window 19-23); fi
+          if [ "$SCHEDULED" = "true" ]; then args+=(--window 18-23); fi
           python3 scripts/x_post.py "${args[@]}" | tee out.txt
           if grep -q "HTTP 201\|already posted" out.txt; then echo "posted=true" >> "$GITHUB_OUTPUT"; fi
       - name: Remember today's post
