@@ -83,17 +83,26 @@ def validate(item):
     return problems
 
 
+AD_DOMAINS = ("a8.net", "amazon.co.jp", "amzn.to", "amzn.asia", "afi-b.com",
+              "moshimo.com", "rakuten.co.jp", "valuecommerce.com")
+
+
 def article_has_ad_links(article):
-    """True if the article renders a CTA or an external link outside HTML
-    comments (checked at posting time, so a restored affiliate-box is caught)."""
+    """True if the article renders a CTA, a rel="sponsored" link, or a link to
+    an ASP/shop domain outside HTML comments (checked at posting time, so a
+    restored affiliate-box is caught). Plain source links to public bodies do
+    not count."""
     if not os.path.exists(article):
         raise SystemExit(f"article not found: {article}")
     with open(article, encoding="utf-8") as f:
         html = re.sub(r"<!--.*?-->", "", f.read(), flags=re.S)
     if 'class="cta-btn"' in html:
         return True
-    for href in re.findall(r'<a\s[^>]*href="(https?:)?//([^/"]+)', html):
-        if not href[1].endswith("hclab16k.github.io"):
+    for tag in re.findall(r"<a\s[^>]*>", html):
+        if re.search(r'rel="[^"]*sponsored', tag):
+            return True
+        m = re.search(r'href="(?:https?:)?//([^/"]+)', tag)
+        if m and any(m.group(1) == d or m.group(1).endswith("." + d) for d in AD_DOMAINS):
             return True
     return False
 
