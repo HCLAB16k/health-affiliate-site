@@ -34,7 +34,7 @@ def write(path, text):
 data = json.loads(read("scripts/site_data.json"))
 cats = data["categories"]
 arts = sorted(data["articles"], key=lambda a: a["date"], reverse=True)
-by_cat = {c["id"]: [a for a in arts if a["category"] == c["id"]] for c in cats}
+by_cat = {c["id"]: [a for a in arts if a.get("category") == c["id"]] for c in cats}  # an article with "category": null is a cross-category guide
 
 
 def fmt_date(d):
@@ -170,8 +170,8 @@ def seo_block(f, s):
         }, {
             "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
                 {"@type": "ListItem", "position": 1, "name": "男の養生帖", "item": SITE},
-                {"@type": "ListItem", "position": 2, "name": CATN[a["category"]], "item": f"{SITE}category/{a['category']}.html"},
-                {"@type": "ListItem", "position": 3, "name": _html.unescape(title), "item": url},
+            ] + ([{"@type": "ListItem", "position": 2, "name": CATN[a["category"]], "item": f"{SITE}category/{a['category']}.html"}] if a.get("category") else []) + [
+                {"@type": "ListItem", "position": 3 if a.get("category") else 2, "name": _html.unescape(title), "item": url},
             ]}]
     elif f == "index.html":
         ld = [{"@context": "https://schema.org", "@type": "WebSite", "name": "男の養生帖", "url": SITE, "inLanguage": "ja"}]
