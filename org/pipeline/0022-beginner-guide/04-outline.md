@@ -16,7 +16,7 @@
 | 睡眠 F1〜F4 は睡眠ガイド2023 の PDF p.13・14・16・32 にある | `.sources/mhlw_sleep_guide2023.txt` を Grep。F1＝749〜755行（p.13、740行のページ区切りの後）、F2＝834〜844行（p.14）、F3＝1029〜1031行（p.16）、F4＝2942〜2950行（p.32） | 一致。文言も 01 の引用どおり。F3 の Q&A 直前（1025行）に「睡眠休養感＝睡眠で休養がとれている感覚」の説明があるので、本文の言い換えに使った |
 | R1「1日50〜100本は普通（AAD）」 | `.sources/aad_hairloss_shedding.txt` 397行、`.sources/nhs_hair_loss.txt` 23行 | 一致（AAD・NHS とも） |
 | R2「6ヵ月で改善がなければ中止し相談」 | `.sources/pmda_riupx5plusneo.txt` 41行 | 一致 |
-| 棚卸しのアンカーはすべて存在する | `articles/*.html` と `tools.html` の id を Grep | ガイドで使う 40 個（skincare #basic #moisture #male-skin #sunscreen #category #choose #visit、bb #check #caution、retinoids #howto-check #before-buy、hair-scalp #check #categories #quasi-drug #see-doctor、aga #flow #before-use #derm、hair-damage #summary-top #visit、beard #flow #contract #mailorder、oral #pillars #differences #overdo #ads #visit、protein #amount #kidney #label #buy、vitamin-d #compare #upper-limit #checklist）はすべて存在。sleep-support・fatigue-recovery は id なし（01 のとおり） |
+| 棚卸しのアンカーはすべて存在する | `articles/*.html` と `tools.html` の id を Grep | ガイドで使う 35 個（skincare #basic #moisture #male-skin #sunscreen #category #choose #visit、bb #check #caution、retinoids #howto-check #before-buy、hair-scalp #check #categories #quasi-drug #see-doctor、aga #flow #before-use #derm、hair-damage #summary-top #visit、beard #flow #contract #mailorder、oral #pillars #differences #overdo #ads #visit、protein #amount #kidney #label #buy、vitamin-d #compare #upper-limit #checklist）はすべて存在。sleep-support・fatigue-recovery は id なし（01 のとおり） |
 | 「build は category なしでエラーになる」（01 前工程の検証） | `scripts/build_site.py` 37行・173〜174行を確認 | **現在は解消済み**。経営企画の判断④で `category: null` を許す形に直っている（パンくずは2階層、カテゴリページには出ない）。そのうえで上の異議1（git add）が残る |
 | R3〜R6（区分・65g・100µg・特商法）は「記事の記載どおり、01 は再確認していない」 | 各記事の該当行を読んで、ガイドの言い回しが原記事の範囲に収まるかを確認（skincare 126行、protein 65・107・123行、winter-vitamin-d 65・75・191・194行、beard 67・156・186行） | 原記事の記述と一致。ガイドでは原記事の確認日をそのまま参考資料に書いた（当部も一次資料は再確認していない） |
 
@@ -65,6 +65,10 @@
   - **ヒゲの節から「毛乳頭などを破壊する脱毛は医行為」の文を外した。** 原記事の要点だが、ガイドで書くと出典（厚労省通知2本）を参考資料に増やすことになり、「短く」（00-brief）に反する。「制度上できることの範囲が違う」とだけ書いて beard #flow に送った。
   - **体臭・爪などは「省く」ではなく独立の短い節（#not-covered）で「現在記事がありません」と書いた。** 「清潔感」で来る読者は体臭・爪を必ず探す（01 読者の悩み）ので、ないことを明示したほうが迷わない。事実は足していない。
   - **早見表の「先に相談したいサイン」列は、各記事の受診の節にある語だけで埋めた。** 睡眠の行だけはガイド本文（F3）から取った。
+  - **受診の共通原則の3つ目を、01 の「この記事は診断をしない」から「持病・服薬があればサプリの前に医師・薬剤師、腎臓の数値を指摘された人はプロテインの前に主治医」に替えた。** 「診断をしない」は原則というより記事の性格なので、#visit 冒頭の太字と「この記事について」に書いた。持病・服薬の注意は、winter-vitamin-d #checklist・hair-scalp #supplement・protein #kidney に共通してあり、分野をまたぐ原則として読者に役立つ。プロテインについては原記事の対象（腎臓の数値・治療中・食事の指示）に合わせ、「薬を飲んでいる人はプロテインの前に相談」とは書いていない。
+  - **「この記事について」に「睡眠の節だけは睡眠ガイドから直接まとめた」と明記した。** 他の節は既存記事の要約だが、睡眠だけは新しく取得した資料（01 F1〜F4）なので、レビュー部と読者が区別できるようにした。
+  - **site_data のカード title は「30代からのセルフケア、何から始めるか」とした**（h1 より短く、既存カードの長さに合わせた）。desc に効能の語は入れていない。
+  - **既存記事の本文・関連記事は変更していない**（前工程への異議2）。0020・0021 のファイルにも触れていない。site_data.json には 0021 の `hair-tonic-review` が先に追加されていたため、その下に本記事の1件を挿入しただけ。
 - 申告事項と Grep 結果（`articles/mens-selfcare-start.html`）:
   - 商品リンク・アフィリエイトリンクは置いていない: `sponsored|nofollow|amazon|a8\.net/|affiliate-box|cta-btn` を Grep → 該当は a8linkmgr スクリプトの `statics.a8.net/a8link/a8linkmgr.js`（下記）と、本文の「Amazon へのリンク〈広告〉があります」という tools.html の説明文のみ。外部リンク（`href="http`）は0件。
   - 「アンチエイジング」「若返り」「清潔感が上がる」「印象が良くなる」は書いていない: Grep → 0件。
@@ -74,7 +78,14 @@
   - Grep の行番号は、下の「Grep 結果（行番号）」に記入した。
 
 ### Grep 結果（行番号）
-（記事完成後に記入）
+2026-10-07、`articles/mens-selfcare-start.html` に対して実行。
+- `sponsored|nofollow|amazon|Amazon|a8\.net/|affiliate-box|cta-btn|href="http` → 13・14・15行（Google Fonts の preconnect/stylesheet、既存記事と同じ head）、142行（tools.html への導線の文中の「Amazon へのリンク〈広告〉があります」）、177行（a8linkmgr スクリプト）。本文の外部リンク・アフィリエイトリンク・affiliate-box・cta-btn は0件。参考資料の URL はリンクにしないテキスト。
+- `アンチエイジング|若返|若く見|清潔感が上|印象が良|効く|改善する|治る|予防できる` → 0件。
+- `睡眠ガイド|寝だめ|カフェイン|無呼吸|6時間` → 49行（この記事について：「睡眠の節だけは睡眠ガイドから」）、60行（早見表の睡眠の行）、85〜87行（#sleep の本文。h2#sleep は84行）、155行（参考資料［9］）。**睡眠ガイドの内容は #sleep の節（84〜89行）と早見表の1行だけ**。
+- `GABA|グリシン|テアニン|ラフマ|クエン酸|オルニチン|CoQ10|ビタミンB` → 0件（成分の効果は書いていない）。sleep-support・fatigue-recovery へのリンクは88行の1段落だけで、睡眠ガイドの段落（85〜87行）とは別段落。
+- `tools.html` → 142行の1件のみ（まとめの節の後の独立した段落。評価の言葉なし）。
+- `体臭|現在記事` → 91行（#not-covered。「現在記事がありません」のみで事実は足していない）。
+- 見出し（`<h[23] id=`）: 51 summary-top／64 skin／68 hair／72 beard／76 oral／80 body／84 sleep／90 not-covered／93 visit／110 choose／113 category／117 label／126 price／134 summary。
 
 ---
 **ゲート条件**
