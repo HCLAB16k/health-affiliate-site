@@ -25,7 +25,7 @@ def measure(path, show_long=False):
     paras = [text(p) for p in re.findall(r"<p[^>]*>(.*?)</p>", body, flags=re.S)]
     paras = [p for p in paras if p and not p.startswith("PR/")]
     items = [text(li) for li in re.findall(r"<li[^>]*>(.*?)</li>", body, flags=re.S)]
-    sents = [x for x in re.split(r"(?<=[。！？])", "".join(paras + items)) if len(x) > 1]
+    sents = [x for t in paras + items for x in re.split(r"(?<=[。！？])", t) if len(x) > 1]  # list items counted on their own
     lens = [len(x) for x in sents]
     allt = "".join(paras + items)
     lead = paras[0] if paras else ""
