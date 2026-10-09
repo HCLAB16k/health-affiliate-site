@@ -9,7 +9,10 @@ over 60 characters, average paragraph length, lead length, [n] per 1000 chars.
 """
 import re
 import statistics
+import signal
 import sys
+
+signal.signal(signal.SIGPIPE, signal.SIG_DFL)
 
 
 def text(h):
