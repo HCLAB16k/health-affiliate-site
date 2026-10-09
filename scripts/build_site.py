@@ -33,7 +33,8 @@ def write(path, text):
 
 data = json.loads(read("scripts/site_data.json"))
 cats = data["categories"]
-arts = sorted(data["articles"], key=lambda a: a["date"], reverse=True)
+# 同じ日付の記事は site_data で後に足したものを先に（新しい順）
+arts = sorted(reversed(data["articles"]), key=lambda a: a["date"], reverse=True)
 by_cat = {c["id"]: [a for a in arts if a.get("category") == c["id"]] for c in cats}  # an article with "category": null is a cross-category guide
 
 
