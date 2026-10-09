@@ -583,3 +583,5 @@ footer.site-footer p { margin-top: 30px; color: #7f828a; font-size: 0.76rem; }
 .toc ol{margin:0;padding-left:1.4em;font-size:14px;line-height:1.8}
 .samecat{margin:32px 0 24px}
 .samecat-title{font-size:18px}
+article blockquote{margin:12px 0 16px;padding:10px 16px;border-left:3px solid var(--line,#ccc);background:var(--soft,#fafafa);color:inherit;font-size:.95em}
+article blockquote p{margin:0}

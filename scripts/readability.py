@@ -21,6 +21,7 @@ def measure(path, show_long=False):
     body = s[s.find("<article>"): s.find("</article>")]
     body = re.sub(r"<!-- (crumbs|byline|toc|samecat):start -->.*?<!-- \1:end -->", "", body, flags=re.S)
     body = re.sub(r"<table.*?</table>", "", body, flags=re.S)
+    body = re.sub(r"<blockquote.*?</blockquote>", "", body, flags=re.S)  # quoted originals are not ours to shorten
     body = re.sub(r'<ol class="refs".*?</ol>|<h2[^>]*>参考資料.*$', "", body, flags=re.S)
     paras = [text(p) for p in re.findall(r"<p[^>]*>(.*?)</p>", body, flags=re.S)]
     paras = [p for p in paras if p and not p.startswith("PR/")]
