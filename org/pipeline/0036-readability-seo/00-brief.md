@@ -1,7 +1,7 @@
 # 00 発注書: 読みやすさの改善（文体ガイド）と SEO 対策
 
 - 案件ID: 0036
-- ステータス: 進行中
+- ステータス: 完了（2026-10-09、全25記事を文体ガイドで公開）
 - 起票日: 2026-10-09
 - 起票理由: オーナー「サイトのコンセプトは良いが、文章自体は少し硬くて読みづらい。日本語で人気のサイトを分析して書き方を分析し、既存記事・今後の記事に反映させて。同時にSEO対策も実施して。」（2026-10-09）
 
@@ -27,3 +27,4 @@
 | 2026-10-09 | 05 | パイロット PASS | caffeine（公開済みの書き直し）と blue-light（新規）が文体ガイドで PASS。技術 SEO（パンくず・byline・目次・同じカテゴリの記事・カテゴリページ）と一緒に公開。既存記事は3〜4本ずつのバッチで書き直し、各バッチを差分審査 | オーナーに Before/After を提示済み |
 | 2026-10-09 | 05 | バッチ1〜3 PASS | 12記事（sleep・fatigue・skincare・mens-selfcare・hair-scalp・hair-tonic・hair-damage・winter-vitamin-d・oral-care・whitening・beard・winter-shaving）の書き直しと他記事のリンク文言を公開。バッチ3 R2-1 は経営企画が修正案どおり反映。残り: バッチ4（minoxidil・loh・body-odor・melatonin・ashwagandha）、バッチ5（protein・mens-bb-cream・aga、商品・院のある記事） | |
 | 2026-10-09 | 05 | バッチ4 PASS | minoxidil・loh・body-odor・melatonin・ashwagandha の書き直しを公開。残りはバッチ5（protein・mens-bb-cream・aga、商品・院のある記事） | |
+| 2026-10-09 | 05 | バッチ5 PASS | protein・mens-bb-cream・aga を公開。全25記事が文体ガイドの版に。持ち越し: aga に広告枠・院の CTA を出すときは pr-badge・冒頭の「リンクの数と場所」の新設・作り方の箱の3か所を同時に直して再審査。bb の #caution と #example の間に足すときは再審査 | |
