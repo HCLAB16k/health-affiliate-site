@@ -3,7 +3,7 @@
 - 担当: editor / 作成日: 2026-10-09
 - 対象: `articles/body-odor-sweat.html`、`articles/melatonin-japan-vs-us.html`、`articles/ashwagandha-japan.html`
 - 基準: `org/style-guide.md`（8章の教訓を含む）、`05-style-rules.md`（以下「線引き」。①〜⑦はその項目番号）、手本（`pilot-before-after.md`・`batch1a-notes.md`・`batch3a-notes.md`）、`seo-audit.md`（付録A・T-3・T-8）、`org/compliance-checklist.md` 6章（症例の転帰の例外、機関ごとの書き分け、「共通点」の確認）、0031・0033 の 04・05
-- やっていないこと: `scripts/site_data.json` の編集、build、git 操作。crumbs・byline・toc・samecat・`<!-- seo:start -->〜<!-- seo:end -->` は触っていない（og・JSON-LD・パンくず・目次は旧 title・旧 h2 のまま。次の build で作り直される前提）
+- やっていないこと: `scripts/site_data.json` の編集、build、git 操作。crumbs・byline・toc・samecat・`<!-- seo:start -->〜<!-- seo:end -->` は手で触っていない（作業の後に build が走ったらしく、3記事の og・JSON-LD はすでに新しい title を反映している。私は build を実行していない。crumbs は site_data のカード名のままなので、body-odor は「体臭・汗の基本」のまま）
 - 出典の確認日は元のまま（body-odor 2026年10月7日、melatonin・ashwagandha 2026年10月9日）。新しく WebFetch した資料はない。照合に使ったのは `.sources/mt_hfnet_alert4526_20261009.txt` l.106 と `.sources/mt_yamanashi_000752581.txt` l.72・80（melatonin の副作用の文。下の 3章）だけ
 - 参考資料の一覧・表のセル・disclaimer・pr-badge は変えていない
 
