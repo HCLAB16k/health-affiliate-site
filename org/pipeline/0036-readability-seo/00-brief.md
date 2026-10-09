@@ -26,3 +26,4 @@
 | 2026-10-09 | 00 | 起票 | 文体分析（リサーチ部）と SEO 監査（分析部）を並行。ガイド確定後に既存記事を数本ずつリライトし、各バッチをレビュー部が差分審査 | オーナー依頼 |
 | 2026-10-09 | 05 | パイロット PASS | caffeine（公開済みの書き直し）と blue-light（新規）が文体ガイドで PASS。技術 SEO（パンくず・byline・目次・同じカテゴリの記事・カテゴリページ）と一緒に公開。既存記事は3〜4本ずつのバッチで書き直し、各バッチを差分審査 | オーナーに Before/After を提示済み |
 | 2026-10-09 | 05 | バッチ1〜3 PASS | 12記事（sleep・fatigue・skincare・mens-selfcare・hair-scalp・hair-tonic・hair-damage・winter-vitamin-d・oral-care・whitening・beard・winter-shaving）の書き直しと他記事のリンク文言を公開。バッチ3 R2-1 は経営企画が修正案どおり反映。残り: バッチ4（minoxidil・loh・body-odor・melatonin・ashwagandha）、バッチ5（protein・mens-bb-cream・aga、商品・院のある記事） | |
+| 2026-10-09 | 05 | バッチ4 PASS | minoxidil・loh・body-odor・melatonin・ashwagandha の書き直しを公開。残りはバッチ5（protein・mens-bb-cream・aga、商品・院のある記事） | |
