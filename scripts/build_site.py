@@ -48,12 +48,12 @@ def cat_nav(prefix, current=None):
     return f'<nav class="cat-nav" aria-label="カテゴリ"><div class="inner">{links}</div></nav>'
 
 
-def card(a, prefix):
+def card(a, prefix, hx="h3"):
     return (
         f'        <a class="card" href="{prefix}articles/{a["slug"]}.html">\n'
         f'          <div class="thumb"><img src="{prefix}images/thumbs/{a["slug"]}.svg" alt="" width="400" height="300" loading="lazy"><span class="tag">{a["tag"]}</span></div>\n'
         f'          <span class="date">公開 {fmt_date(a["date"])}' + (f' / 更新 {fmt_date(a["updated"])}' if a.get("updated") else '') + '</span>\n'
-        f'          <h3>{a["title"]}</h3>\n'
+        f'          <{hx}>{a["title"]}</{hx}>\n'
         f'          <p>{a["desc"]}</p>\n'
         f'          <span class="more">+ 記事を読む</span>\n'
         f'        </a>\n'
@@ -102,9 +102,9 @@ footer = head_src[head_src.index("<footer"): head_src.index("</footer>") + len("
 footer = re.sub(r'href="(?!https?:|//|#)([^"]+)"', r'href="../\1"', footer)
 
 for c in cats:
-    h = re.sub(r"<title>.*?</title>", f"<title>{c['name']}の記事一覧 | 男の養生帖</title>", head)
+    h = re.sub(r"<title>.*?</title>", f"<title>{c['name']}の記事一覧（{len(by_cat[c['id']])}本・出典つき） | 男の養生帖</title>", head)
     h = h.replace('<meta name="viewport"', f'<meta name="description" content="{c["lead"]}">\n<meta name="viewport"', 1)
-    items = "".join(card(a, "../") for a in by_cat[c["id"]])
+    items = "".join(card(a, "../", "h2") for a in by_cat[c["id"]])
     page = (
         h + "<body>\n\n" + header + "\n\n"
         '<main class="category-page">\n'
@@ -182,6 +182,76 @@ def seo_block(f, s):
     return "\n".join(lines)
 
 
+# ---------- article page parts: breadcrumb, byline, table of contents, same-category links ----------
+import sys as _sys
+_sys.path.insert(0, os.path.join(ROOT, "scripts"))
+from x_post import article_has_ad_links  # noqa: E402
+
+NO_AUTO_LINKS = {"aga-selfcare-vs-clinic"}  # clinic page: links to/from it are placed by hand after review (0025 ⑨, backlog #33)
+
+
+def strip_tags(t):
+    return re.sub(r"<[^>]+>", "", t).strip()
+
+
+def plain_slugs():
+    out = set()
+    for a in data["articles"]:
+        path = f"articles/{a['slug']}.html"
+        if a["slug"] in NO_AUTO_LINKS or not os.path.exists(os.path.join(ROOT, path)):
+            continue
+        if not article_has_ad_links(os.path.join(ROOT, path)):
+            out.add(a["slug"])
+    return out
+
+
+PLAIN = plain_slugs()
+
+
+def article_parts(f, s):
+    slug = f[len("articles/"):-len(".html")]
+    a = ART[slug]
+    s = re.sub(r"<!-- (crumbs|toc|samecat):start -->.*?<!-- \1:end -->\n[ \t]*", "", s, flags=re.S)
+    s = re.sub(r"\n[ \t]*<!-- byline:start -->.*?<!-- byline:end -->", "", s, flags=re.S)
+    # breadcrumb (visible; JSON-LD already in the seo block)
+    crumbs = '<a href="../index.html">男の養生帖</a>'
+    if a.get("category"):
+        crumbs += f' &rsaquo; <a href="../category/{a["category"]}.html">{CATN[a["category"]]}</a>'
+    crumbs += f' &rsaquo; <span>{a["title"]}</span>'
+    s = s.replace("  <article>", f'  <!-- crumbs:start --><nav class="crumbs" aria-label="パンくずリスト">{crumbs}</nav><!-- crumbs:end -->\n  <article>', 1)
+    # byline right after the h1
+    by = f'公開 {fmt_date(a["date"])}' + (f'（更新 {fmt_date(a["updated"])}）' if a.get("updated") and a["updated"] != a["date"] else "")
+    by += ' ・ <a href="../about.html">男の養生帖 編集部</a>（記事の作り方）'
+    s = re.sub(r"(<h1[^>]*>.*?</h1>)", lambda m: m.group(1) + f'\n    <!-- byline:start --><p class="byline">{by}</p><!-- byline:end -->', s, count=1, flags=re.S)
+    # ids for h2 without one, then a table of contents before the first h2
+    n = [0]
+    def add_id(m):
+        n[0] += 1
+        return f'<h2 id="sec-{n[0]}"' + m.group(1)
+    s = re.sub(r"<h2(?![^>]*\bid=)([^>]*>)", add_id, s)
+    heads = [(i, strip_tags(t)) for i, t in re.findall(r'<h2[^>]*\bid="([^"]+)"[^>]*>(.*?)</h2>', s, flags=re.S)]
+    if len(heads) >= 3:
+        lis = "".join(f'<li><a href="#{i}">{t}</a></li>' for i, t in heads)
+        toc = f'<!-- toc:start --><nav class="toc" aria-label="目次"><p class="toc-title">目次</p><ol>{lis}</ol></nav><!-- toc:end -->\n    '
+        # after the "先に要点" summary if the article starts with one (style guide 6章), else before the first h2
+        skip = 1 if heads and heads[0][1].startswith("先に要点") else 0
+        lis = "".join(f'<li><a href="#{i}">{t}</a></li>' for i, t in heads[skip:])
+        toc = f'<!-- toc:start --><nav class="toc" aria-label="目次"><p class="toc-title">目次</p><ol>{lis}</ol></nav><!-- toc:end -->\n    '
+        cnt = [0]
+        def put(m):
+            cnt[0] += 1
+            return m.group(1) + toc + m.group(2) if cnt[0] == skip + 1 else m.group(0)
+        s = re.sub(r"(\n\s*)(<h2[^>]*\bid=)", put, s)
+    # same-category links (only between articles without ad links; never on/to the clinic page)
+    if slug in PLAIN and a.get("category"):
+        same = [b for b in arts if b.get("category") == a["category"] and b["slug"] != slug and b["slug"] in PLAIN]
+        if same:
+            lis = "".join(f'<li><a href="{b["slug"]}.html">{b["title"]}</a></li>' for b in same)
+            block = f'<!-- samecat:start --><section class="samecat"><h2 class="samecat-title">{CATN[a["category"]]}の記事</h2><ul>{lis}</ul></section><!-- samecat:end -->\n    '
+            s = s.replace('<div class="disclaimer">', block + '<div class="disclaimer">', 1)
+    return s
+
+
 # ---------- category bar on every page ----------
 files = subprocess.check_output(["git", "ls-files", "*.html"], cwd=ROOT).decode().split()
 files = sorted(set(files) | {f"category/{c['id']}.html" for c in cats})
@@ -194,6 +264,8 @@ for f in files:
     nav = cat_nav(prefix, current)
     s = re.sub(r'\n?<nav class="cat-nav".*?</nav>', "", s, flags=re.S)
     s = s.replace("</header>", "</header>\n" + nav, 1)
+    if f.startswith("articles/"):
+        s = article_parts(f, s)
     s = re.sub(r"\n?<!-- seo:start -->.*?<!-- seo:end -->", "", s, flags=re.S)
     s = s.replace("</head>", seo_block(f, s) + "\n</head>", 1)
     write(f, s)
