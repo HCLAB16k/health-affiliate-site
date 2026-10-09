@@ -117,6 +117,7 @@ AIの部署では実行できない、人間（オーナー）にしかできな
     - 1日目: glp1-diet, creatine, minoxidil-finasteride-guideline, loh-testosterone, caffeine-limits, melatonin-japan-vs-us, whitening-japan-vs-overseas, body-odor-sweat
     - 2日目: ashwagandha-japan, blue-light-glasses, dandruff-shampoo, hair-tonic-review, mens-selfcare-start, winter-shaving-skin, トップページ
   - ④ 表示回数・クリックが出ていれば、上位のページとクエリのスクショ
+  - 回答: 2026-10-09 ① 2つとも「取得できませんでした」（最終読み込み日時なし、型 不明、ページ数0）。経営企画の再確認: 配信中の sitemap.xml は 200・application/xml・XML 妥当・37 URL、すべてプロパティ配下、Googlebot UA でも 200 → ファイル側の問題なし。新しい小さなサイトでは Google がまだ取りに来ていないと、この表示が続く。対応は**再送信しない**で待つ。インデックスは③の URL ごとのリクエストで進める。②③は未回答
 - [ ] **D13.（数日後）サイトマップの状態の再確認**: Search Console →「サイトマップ」で状態が「成功しました」になったか
   - 2026-10-04 まだ「取得できませんでした」（最終読み込み日時なし）。経営企画の確認: sitemap.xml は 200・application/xml・XML 妥当・22 URL、Googlebot の UA でも 200、ホスト直下の robots.txt は 404（＝制限なし、問題なし）→ ファイル側の問題は見当たらない。次の手: ①URL 検査で sitemap.xml の「公開 URL をテスト」 ②`sitemap.xml?v=2` で別送信 ③「ページ」レポートでインデックス数を確認
   - 2026-10-04 ①の結果: ライブテストで「URL は Google に登録できます」「ページの可用性: 登録可能」→ Google は sitemap.xml を取得できる。サイトマップ画面の表示は Search Console 側の処理待ちと判断。残り ②③
