@@ -17,7 +17,7 @@
    - 成人についての日本の公式見解は、次の範囲で探したが見つからなかった。日本眼科学会「目の病気」の眼精疲労とドライアイのページ、日本眼科医会「目についての健康情報」の一覧（パソコンと目、屈折異常と眼精疲労）、厚労省の情報機器作業ガイドライン（本文・解説・パンフレット）、睡眠ガイド2023。検索語は「ブルーライト」「カット」「眼鏡」「メガネ」「フィルタ」。このうち、厚労省ガイドラインの解説にブルーライトの記述が1文だけあった（概日リズムへの影響の研究がある、という内容。下の F15）。眼鏡については何も書いていない。Web 検索（「日本眼科医会 ブルーライトカット 大人 成人」等）でも、2021年の意見書より後の成人向けの見解は見つからなかった。**ただし、見つからなかったことは「存在しない」ことの証明にはならない。** 記事では「当社が確認した範囲では」と付けることを提案する。
    - 知恵袋の回答には「眼科学会も否定しています」と書いて意見書へリンクするものが繰り返し出てくる（下の「読者の悩み」）。対象が小児であることが読者に伝わっていない。**記事の価値はこの区別にある。** タイトル・見出し・まとめで「日本の眼科学会が否定」と書かないこと。
 
-2. **AAO のページの利用条件。** AAO の各ページの末尾には、次の注記がある。「This content may not be reproduced, copied, or put into any artificial intelligence program, including large language and generative AI models, without permission from the Academy.」
+2. **AAO のページの利用条件。** AAO の各ページの末尾には、学会の許可なく内容を複製・コピーしたり、大規模言語モデル・生成 AI を含む AI プログラムに入れたりしない、という趣旨の注記がある（要約。原文の英文は 0034 の 05 #9 により削除、2026-10-09）。
    - 当部は論点整理のために原文を `.sources/` に保存した（Git 管理外）。
    - 記事では、短い要旨の和訳と出典の明示にとどめ、長い引用・転載をしないことを提案する。和訳を使うなら、6団体の意見書 PDF p.3 に載っている和訳（6団体による訳）を出典つきで使う手もある。
    - 保存したこと自体の扱いも含めて、判断をお願いしたい。
@@ -37,7 +37,7 @@
    - 当部の提案: 本文には入れない（00-brief の範囲どおり）。入れる場合は、上の条件・限界・資金をすべて同じ段落に書く。
 
 5. **「眼鏡」に関わる隣の話題の扱い。** 00-brief は「眼鏡・目薬・サプリの効能」を書かないとしている。一方、一次情報には次の記述がある。
-   - 視力矯正の眼鏡: AAO は、度の入った「computer eyeglasses」（中間距離に合わせたもの）が目の疲れを減らすことがあるとしたうえで、「blue light blocking」眼鏡とは別物だと書いている（F8）。日本眼科医会のページにも「パソコンの距離用に調節したメガネやコンタクトを使用すると目が楽になることがあります」とある（F20）。厚労省のガイドラインは「必要に応じて適切な眼鏡による矯正を行うこと」「作業に適した矯正眼鏡等の処方については、眼科医が行うことが望ましい」と書いている（F13・F17）。
+   - 視力矯正の眼鏡: AAO のページには、中間距離に合わせた度入りのパソコン用眼鏡が目の疲れを減らすことがあり、それはブルーライトカット眼鏡とは別物だ、という論点がある（F8。要約）。日本眼科医会のページにも「パソコンの距離用に調節したメガネやコンタクトを使用すると目が楽になることがあります」とある（F20）。厚労省のガイドラインは「必要に応じて適切な眼鏡による矯正を行うこと」「作業に適した矯正眼鏡等の処方については、眼科医が行うことが望ましい」と書いている（F13・F17）。
    - 目薬: AAO は人工涙液を挙げている（F7・F8）。日本眼科学会は「眼精疲労に特効薬はありませんが、ビタミン剤の配合された点眼薬や内服薬が有効である場合があります」と書いている（F18）。
    - 当部の提案:
      - 視力矯正については、「度が合っているかを眼科で確かめる」という受診・検査の文脈でだけ書く。眼鏡の種類の推奨にしない。
@@ -45,14 +45,14 @@
      - 判断はレビュー部にお願いしたい。
 
 6. **AAO の中でも、就寝前に画面を控える時間が食い違っている。**
-   - 2021年の2ページは「two to three hours before bed」（就寝前2〜3時間）。
-   - 2019年の Night Mode のページは「one to two hours before bed」（1〜2時間）。
+   - 2021年の2ページは、就寝前2〜3時間（要約）。
+   - 2019年のナイトモードのページは、就寝前1〜2時間（要約）。
    - 00-brief は、睡眠については睡眠ガイド2023 の範囲としている。当部の提案は2案。(a) 睡眠の節は睡眠ガイド2023 だけで書き、AAO の時間は書かない。(b) 書くなら「ページによって2〜3時間・1〜2時間と書き方が違う」と両方を書く。
 
 7. **6団体の意見書の「夕方以降のカット」の一文を落とさないこと。** 意見書は「夕方以降にブルーライトをカットすることには、一定の効果が見込まれる可能性はあります」と書いたうえで、「しかしながら、その他の点はエビデンスに乏しく」と続けている（PDF p.1）。否定の部分だけを抜き出すと、症例要約で安心側だけを抜くのと同じ偏りになる（checklist 6章）。書くときは「可能性はあります」の弱さのまま書く。記事には商品リンクが無いので推せん条項の問題は小さいと考える。最終判断はレビュー部。
 
 8. **タイトルの言い切りについて。** 「ブルーライトカット 意味ない」で検索に答える記事だが、一次情報の言い方は機関ごとに違う。
-   - AAO: 「does not recommend」（推奨しない）。
+   - AAO: 推奨しない（6団体の意見書の和訳では「推奨しません」）。
    - Cochrane: 「may not reduce」（低い確実性で、減らさない可能性）。睡眠は「indeterminate」（はっきりしない）。
    - 6団体: 小児について「推奨する根拠はなく」。
    - タイトルで「意味ない」と断定しないことを提案する。たとえば「〜は必要？ 米国眼科学会・日本の眼科6団体・コクランの見解を、対象と条件ごとに」。
@@ -132,11 +132,11 @@
 | **F2** 意見書の背景（PDF p.1）。「小児にブルーライトカット眼鏡を装用させることを推奨する動きが一部にありますが、我々は以下の科学的観点からそれを危惧する」。販売されている眼鏡は「デジタル端末使用時の睡眠障害や眼精疲労の軽減、また眼球への障害を予防すると謳っています」。「夜遅くまでデジタル端末の強い光を浴びると、睡眠障害をきたす恐れが指摘されています。従って、夕方以降にブルーライトをカットすることには、一定の効果が見込まれる可能性はあります。しかしながら、その他の点はエビデンスに乏しく」 | 同上 | 2026-10-09 | 学術 |
 | **F3** 意見書の①〜④（PDF p.1）。①液晶画面のブルーライトは「曇天や窓越しの自然光よりも少なく、網膜に障害を生じることはないレベル」と報告されている（文献*1・*2）。②小児にとって太陽光は発育に好影響。十分な太陽光を浴びないと小児の近視進行のリスクが高まる。装用は「ブルーライトの曝露自体よりも有害である可能性が否定できません」（*4 は AAO）。③「最新の米国一流科学誌に掲載されたランダム化比較試験では、ブルーライトカット眼鏡には眼精疲労を軽減する効果が全くないと報告されています」（*5 は Singh 2021、Am J Ophthalmol）。④「就寝前ならともかく、日中にブルーライトカット眼鏡をあえて装用する有用性は根拠に欠けます。産業衛生分野では、日中の仕事は窓ぎわの明るい環境下で行うことが奨められています」（*6 Lowden 2019）。結論は「小児にブルーライトカット眼鏡の装用を推奨する根拠はなく、むしろ…発育に悪影響を与えかねません」 | 同上 | 2026-10-09 | 学術 |
 | **F4** 意見書の PDF p.3 は AAO の Q&A の和訳（2021年3月5日付の AAO ページの訳、と注記）。A1「眼精疲労は画面からのライトのためではなく、デジタル機器の使い方によるもの」「就寝時間の 2～3 時間前からデジタル機器の使用を控えるのが良いでしょう」。A2「ブルーライトが目に悪いという科学的根拠はありませんので、米国眼科アカデミーではブルーライトカット眼鏡を推奨しません」。A3「デジタル機器を一日中使う子供たちの場合も大人と同じです」 | 同上 PDF p.3 | 2026-10-09 | 学術（6団体による AAO の訳） |
-| **F5** AAO「Are Blue Light-Blocking Glasses Worth It?」（By Celia Vimont / Reviewed By Rahul N Khurana, MD / Published Mar. 05, 2021）。「There is no scientific evidence that the light coming from computer screens is damaging to the eyes. Because of this, the Academy does not recommend any special eye wear for computer use.」「The American Academy of Ophthalmology does not recommend blue light-blocking glasses because of the lack of scientific evidence that blue light is damaging to the eyes.」目の疲れは「caused by how people use their screens」 | https://www.aao.org/eye-health/tips-prevention/are-computer-glasses-worth-it （`bl_aao_computer_glasses`） | 2026-10-09 | 学術（学会の一般向けページ） |
-| **F6** 同ページの目の疲れ対策。画面から約25インチ（腕の長さ）離れ、やや見下ろす位置にする。「20-20-20」ルール（20分ごとに、20フィート以上離れたものを20秒以上見る）。乾いたら人工涙液。室内の照明を調整し、画面のコントラストを上げる。必要ならマットな画面フィルター。コンタクトの人は眼鏡にして目を休める。「If you continue to experience these symptoms, contact your ophthalmologist.」子どもについて「The recommendation for children using screens all day is the same as for adults」 | 同上 | 2026-10-09 | 学術 |
-| **F7** AAO「Should You Be Worried About Blue Light?」（同じ著者・レビュー者、Mar. 10, 2021）。画面の後の不快感は「most likely digital eye strain」。まばたきが減る。「Skip the glasses that claim to protect your eyes against blue light, because of a lack of evidence that they are effective.」ブルーライトの最大の光源は太陽光。画面からの曝露は太陽よりはるかに少ない。睡眠については就寝前2〜3時間の画面を控え、夜間設定を使う。予防措置は「could be more harmful than the blue light itself」（Khurana 医師の発言） | https://www.aao.org/eye-health/tips-prevention/should-you-be-worried-about-blue-light （`bl_aao_worried_blue_light`） | 2026-10-09 | 学術 |
-| **F8** AAO「Computers, Digital Devices, and Eye Strain」（Reviewed By James M Huffman, MD / Published Jun. 27, 2024）。まばたきは通常1分に約15回、画面使用中は約5〜7回。度入りの「computer eyeglasses」（中間距離 約20〜26インチ用）が目の疲れを減らすことがある。「Be aware that computer glasses for reducing eye strain are not the same as "blue light blocking" glasses.」「If your eyes are consistently red, blurry or watery, or they become sensitive to light or painful, see your ophthalmologist.」 | https://www.aao.org/eye-health/tips-prevention/computer-usage （`bl_aao_computer_usage`） | 2026-10-09 | 学術 |
-| **F9** AAO「Should You Use Night Mode to Reduce Blue Light?」（Reviewed By Raj K Maturi, MD / May 07, 2019）。就寝前「one to two hours」の画面を控え、ナイトモードを使う。それでも目の疲れや睡眠の問題が残れば眼科医に相談。※2021年のページ（2〜3時間）と食い違う（異議6） | https://www.aao.org/eye-health/tips-prevention/should-you-use-night-mode-to-reduce-blue-light （`bl_aao_night_mode`） | 2026-10-09 | 学術 |
+| **F5** AAO「Are Blue Light-Blocking Glasses Worth It?」（By Celia Vimont / Reviewed By Rahul N Khurana, MD / Published Mar. 05, 2021）。論点の要約: 画面の光が目を傷つけるという科学的根拠はないので、パソコン用の特別な眼鏡もブルーライトカット眼鏡も推奨しない。目の疲れは画面の使い方による。（英文の引用は 0034 の 05 #9 により削除。記事の根拠は意見書 PDF p.3 の和訳 F4） | https://www.aao.org/eye-health/tips-prevention/are-computer-glasses-worth-it （`bl_aao_computer_glasses`） | 2026-10-09 | 学術（学会の一般向けページ） |
+| **F6** 同ページの目の疲れ対策。画面から約25インチ（腕の長さ）離れ、やや見下ろす位置にする。「20-20-20」ルール（20分ごとに、20フィート以上離れたものを20秒以上見る）。乾いたら人工涙液。室内の照明を調整し、画面のコントラストを上げる。必要ならマットな画面フィルター。コンタクトの人は眼鏡にして目を休める。症状が続くときは眼科医に相談、という趣旨の記述がある。子どもへの推奨も大人と同じ、としている（いずれも要約） | 同上 | 2026-10-09 | 学術 |
+| **F7** AAO「Should You Be Worried About Blue Light?」（同じ著者・レビュー者、Mar. 10, 2021）。論点の要約: 画面を見た後の不快感はデジタル眼精疲労の可能性が高い。まばたきが減る。ブルーライトから目を守るとうたう眼鏡は、効果の根拠がないので勧めない。ブルーライトの最大の光源は太陽光で、画面からの曝露は太陽よりはるかに少ない。睡眠については就寝前2〜3時間の画面を控え、夜間設定を使う。予防措置のほうがブルーライトそのものより有害になりうる、という医師の発言がある（Khurana 医師）。（英文の引用は削除） | https://www.aao.org/eye-health/tips-prevention/should-you-be-worried-about-blue-light （`bl_aao_worried_blue_light`） | 2026-10-09 | 学術 |
+| **F8** AAO「Computers, Digital Devices, and Eye Strain」（Reviewed By James M Huffman, MD / Published Jun. 27, 2024）。まばたきは通常1分に約15回、画面使用中は約5〜7回。論点の要約: 中間距離（約20〜26インチ）に合わせた度入りのパソコン用眼鏡が目の疲れを減らすことがあり、それはブルーライトカット眼鏡とは別物。目がいつも赤い・かすむ・涙が出る、光に敏感になる・痛むときは眼科医へ。（英文の引用は削除） | https://www.aao.org/eye-health/tips-prevention/computer-usage （`bl_aao_computer_usage`） | 2026-10-09 | 学術 |
+| **F9** AAO「Should You Use Night Mode to Reduce Blue Light?」（Reviewed By Raj K Maturi, MD / May 07, 2019）。論点の要約: 就寝前1〜2時間の画面を控え、ナイトモードを使う。それでも目の疲れや睡眠の問題が残れば眼科医に相談。※2021年のページ（2〜3時間）と食い違う（異議6） | https://www.aao.org/eye-health/tips-prevention/should-you-use-night-mode-to-reduce-blue-light （`bl_aao_night_mode`） | 2026-10-09 | 学術 |
 | **F10** Cochrane 2023。Singh S, Keller PR, Busija L, McMillan P, Makrai E, Lawrenson JG, Hull CC, Downie LE. Cochrane Database Syst Rev 2023, Issue 8, CD013244. 2023-08-18 公開。対象は成人（「in adults」）。検索日は2022-03-22。RCT 17件（5〜156名、合計619名、6か国）。追跡期間は1日未満〜5週間。メタ分析は行っていない。結果: 目の疲れの自覚スコアは「may be no difference」（1週間未満、**低い確実性**）。CFF は「little to no difference」（1日未満、低い確実性）。最高矯正視力は「probably little or no effect」（**中等度の確実性**）。睡眠の質は「We do not know」（**非常に低い確実性**。6件148名のうち3件で改善、3件で差なし）。コントラスト感度・色の識別・まぶしさ・黄斑の健康・血中メラトニン・満足度は、調べた試験が無い。有害事象（頭痛・抑うつ症状の増加・気分の低下・装用時の不快感）は報告が一貫せず、低い確実性。「similar adverse effects were also reported with non-blue-light filtering lenses」 | https://www.cochrane.org/evidence/CD013244_blue-light-filtering-spectacle-lenses-visual-performance-sleep-and-macular-health-adults （`bl_cochrane_CD013244_pls`）。全文 https://openaccess.city.ac.uk/id/eprint/31201/1/Singh_et_al-2023-Cochrane_Database_of_Systematic_Reviews.pdf PDF p.4（`bl_city_singh2023_cochrane`）。PMID 37593770 | 2026-10-09 | 学術（系統的レビュー） |
 | **F11** Cochrane 2023 の利益相反（PDF p.101）。Downie は NHMRC TRIP フェロー（2015-2017）で、本レビューはその一環。前眼部疾患の臨床試験で Alcon Pty Ltd・Coopervision Pty Ltd から資金を受けたことがある（本研究とは無関係と記載）。開業検眼医として診療している。組み入れた Singh 2021 の研究者でもある（その試験のバイアス評価・データ抽出はしていない）。Singh も Singh 2021 の研究者（同様）。Lawrenson と Hull は、英国 College of Optometrists から、ブルーライトカットレンズの根拠についての記事の共著の報酬を受けた。ほか4名は「none known」 | 同上 PDF p.101 | 2026-10-09 | 学術 |
 | **F12** Cochrane 2023 の資金（PDF p.101）。内部: The University of Melbourne。外部: オーストラリア NHMRC（APP1091833）、英国 Public Health Agency（Cochrane Eyes and Vision の編集拠点）、Queen's University Belfast。企業からの資金の記載は無い | 同上 | 2026-10-09 | 学術 |
@@ -165,7 +165,7 @@
 
 ## 次工程への申し送り
 - **書き分けの軸（編集部へ）**: 機関ごとに、(1) 誰を対象に (2) 何について (3) どの言葉で、を表にする。
-  - AAO（米国）: 大人も子どもも／パソコン用の特別な眼鏡は推奨しない／「does not recommend」。
+  - AAO（米国）: 大人も子どもも／パソコン用の特別な眼鏡は推奨しない／推奨しない（和訳は意見書 PDF p.3）。
   - 日本の6団体: 小児／装用を推奨する根拠なし。夕方以降のカットは「一定の効果が見込まれる可能性」／「慎重意見」。
   - Cochrane: 成人の RCT／目の疲れは差がない可能性（低い確実性）、睡眠は不明（非常に低い）、黄斑は試験なし。
   - 厚労省: 事業者向けの労働衛生の指針／休止・視距離・照度。ブルーライトは解説で「その使用に留意」の1文だけで、眼鏡の記述は無い。
