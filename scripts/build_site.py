@@ -233,7 +233,15 @@ def article_parts(f, s):
     if len(heads) >= 3:
         lis = "".join(f'<li><a href="#{i}">{t}</a></li>' for i, t in heads)
         toc = f'<!-- toc:start --><nav class="toc" aria-label="目次"><p class="toc-title">目次</p><ol>{lis}</ol></nav><!-- toc:end -->\n    '
-        s = re.sub(r"(\n\s*)(<h2[^>]*\bid=)", lambda m: m.group(1) + toc + m.group(2), s, count=1)
+        # after the "先に要点" summary if the article starts with one (style guide 6章), else before the first h2
+        skip = 1 if heads and heads[0][1].startswith("先に要点") else 0
+        lis = "".join(f'<li><a href="#{i}">{t}</a></li>' for i, t in heads[skip:])
+        toc = f'<!-- toc:start --><nav class="toc" aria-label="目次"><p class="toc-title">目次</p><ol>{lis}</ol></nav><!-- toc:end -->\n    '
+        cnt = [0]
+        def put(m):
+            cnt[0] += 1
+            return m.group(1) + toc + m.group(2) if cnt[0] == skip + 1 else m.group(0)
+        s = re.sub(r"(\n\s*)(<h2[^>]*\bid=)", put, s)
     # same-category links (only between articles without ad links; never on/to the clinic page)
     if slug in PLAIN and a.get("category"):
         same = [b for b in arts if b.get("category") == a["category"] and b["slug"] != slug and b["slug"] in PLAIN]
