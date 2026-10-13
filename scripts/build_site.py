@@ -254,7 +254,7 @@ def article_parts(f, s):
 
 
 # ---------- category bar on every page ----------
-files = subprocess.check_output(["git", "ls-files", "*.html"], cwd=ROOT).decode().split()
+files = [f for f in subprocess.check_output(["git", "ls-files", "*.html"], cwd=ROOT).decode().split() if not f.startswith("org/")]  # org/ is internal (not served)
 files = sorted(set(files) | {f"category/{c['id']}.html" for c in cats})
 for f in files:
     if f.startswith("google"):

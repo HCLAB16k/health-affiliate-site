@@ -1,7 +1,7 @@
 {
   "today": "2026-10-14",
   "auto": {
-    "articles": 28,
+    "articles": 29,
     "articles_by_category": {
       "ヘア・AGA": 6,
       "入門ガイド（カテゴリなし）": 1,
@@ -11,7 +11,7 @@
       "ボディ・栄養": 5,
       "睡眠・疲労": 7,
       "運動・筋トレ": 1,
-      "泌尿器・性の悩み": 1
+      "泌尿器・性の悩み": 2
     },
     "article_dates": [
       "2026-09-13",
@@ -41,7 +41,8 @@
       "2026-10-09",
       "2026-10-09",
       "2026-10-10",
-      "2026-10-10"
+      "2026-10-10",
+      "2026-10-14"
     ],
     "monetized_pages": 3,
     "monetized_list": [
@@ -49,7 +50,7 @@
       "protein-guide",
       "tools"
     ],
-    "owner_inbox_open": 31,
+    "owner_inbox_open": 33,
     "active_cases": [
       {
         "case": "0028-mens-toner-allinone",
@@ -58,17 +59,9 @@
       {
         "case": "0039-forteca-otc",
         "status": "進行中"
-      },
-      {
-        "case": "0045-x-post-improvement",
-        "status": "進行中"
-      },
-      {
-        "case": "0046-nocturia",
-        "status": "進行中"
       }
     ],
-    "x_scheduled_upcoming": 22,
+    "x_scheduled_upcoming": 23,
     "x_last_scheduled": "2026-11-09"
   }
 }
