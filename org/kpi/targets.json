@@ -1,0 +1,17 @@
+{
+  "_note": "KPI の目標（D0019、2026-10-13 改定）。定義は org/kpi/README.md。数値はすべて計画上の目安で、実績を見て分析部が四半期ごとに見直す。収益額は公開リポジトリに書かないため、収益は件数と目標の到達・未到達だけで扱う",
+  "phases": [
+    {"id": "2026-11", "label": "2026年11月末", "end": "2026-11-30",
+     "focus": "検索に載る・収益の導線をつくる",
+     "targets": {"articles": 33, "monetized_pages": 4, "indexed_pages": 25, "search_impressions_week": 300, "sessions_month": 300, "asp_clicks_month": 10, "conversions_month": 0}},
+    {"id": "2026-12", "label": "2026年12月末", "end": "2026-12-31",
+     "focus": "高単価の案件で初めての成約",
+     "targets": {"articles": 38, "monetized_pages": 6, "indexed_pages": 35, "search_impressions_week": 1000, "sessions_month": 1500, "asp_clicks_month": 40, "conversions_month": 1}},
+    {"id": "2027-03", "label": "2027年3月末", "end": "2027-03-31",
+     "focus": "伸びる記事に集中（リライト・内部リンク）",
+     "targets": {"articles": 50, "monetized_pages": 10, "indexed_pages": 48, "search_impressions_week": 5000, "sessions_month": 8000, "asp_clicks_month": 300, "conversions_month": 8}},
+    {"id": "2027-09", "label": "2027年9月末", "end": "2027-09-30",
+     "focus": "月10万円（確定）",
+     "targets": {"articles": 70, "monetized_pages": 15, "indexed_pages": 68, "search_impressions_week": 20000, "sessions_month": 30000, "asp_clicks_month": 2100, "conversions_month": 20}}
+  ]
+}

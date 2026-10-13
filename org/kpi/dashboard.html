@@ -1,0 +1,132 @@
+<title>養生帖 KPI ボード</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700&family=Noto+Sans+JP:wght@400;500&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: one column of sections; summary tiles first, then trend, then tables. */
+:root {
+  --bg: #f5f6f3; --surface: #ffffff; --ink: #1c2420; --muted: #5d6a63; --line: #dfe4df;
+  --accent: #2f6b55; --accent-soft: #d6e7df;
+  --ok: #2e7d4f; --warn: #a66a00; --low: #8a8f8c; --nodata: #8a8f8c;
+  --display: "Zen Kaku Gothic New", "Hiragino Sans", "Noto Sans JP", sans-serif;
+  --body: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121715; --surface: #1a211e; --ink: #e6ece8; --muted: #9aa8a0; --line: #2b3531;
+  --accent: #7cc4a5; --accent-soft: #24382f; --ok: #6fcf97; --warn: #e0b04f; --low: #8c9590; --nodata: #8c9590; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #121715; --surface: #1a211e; --ink: #e6ece8; --muted: #9aa8a0; --line: #2b3531;
+  --accent: #7cc4a5; --accent-soft: #24382f; --ok: #6fcf97; --warn: #e0b04f; --low: #8c9590; --nodata: #8c9590; color-scheme: dark; }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); line-height: 1.6; }
+.wrap { max-width: 1040px; margin: 0 auto; padding-inline: 16px; padding-block: 24px 48px; display: grid; gap: 28px; }
+h1, h2 { font-family: var(--display); text-wrap: balance; margin: 0; }
+h1 { font-size: 1.6rem; }
+h2 { font-size: 1.1rem; }
+.meta { color: var(--muted); font-size: .85rem; display: flex; flex-wrap: wrap; gap: 4px 16px; }
+.phase { background: var(--accent-soft); border-radius: 10px; padding: 12px 16px; display: flex; flex-wrap: wrap; gap: 4px 16px; align-items: baseline; }
+.phase b { font-family: var(--display); }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+.tile { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; display: grid; gap: 8px; min-width: 0; }
+.tile-head { display: flex; justify-content: space-between; gap: 8px; align-items: center; }
+.tile-label { font-size: .9rem; color: var(--muted); }
+.pill { font-size: .72rem; padding: 2px 8px; border-radius: 99px; border: 1px solid currentColor; white-space: nowrap; }
+.pill.ok { color: var(--ok); } .pill.warn { color: var(--warn); } .pill.low, .pill.nodata { color: var(--low); }
+.tile-val { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+.num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.tile-val .num { font-size: 1.8rem; }
+.unit { color: var(--muted); font-size: .85rem; }
+.tgt { margin-left: auto; color: var(--muted); font-size: .8rem; font-family: var(--mono); }
+.bar { height: 6px; background: var(--line); border-radius: 99px; overflow: hidden; }
+.bar span { display: block; height: 100%; background: var(--accent); border-radius: 99px; }
+.tile.ok .bar span { background: var(--ok); }
+.tile-note { font-size: .78rem; color: var(--muted); }
+.since { white-space: nowrap; }
+section { display: grid; gap: 12px; min-width: 0; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; min-width: 0; }
+svg { width: 100%; height: auto; display: block; }
+svg .grid { stroke: var(--line); stroke-width: 1; }
+svg .axis { fill: var(--muted); font-size: 11px; font-family: var(--mono); }
+svg .label { fill: var(--ink); font-size: 12px; font-family: var(--mono); }
+svg .line { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linejoin: round; }
+svg .now circle { fill: var(--accent); stroke: var(--surface); stroke-width: 2; }
+svg .tgtmark circle { fill: var(--surface); stroke: var(--muted); stroke-width: 2; stroke-dasharray: 3 2; }
+.legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: .8rem; color: var(--muted); }
+.legend i { display: inline-block; width: 18px; height: 2px; background: var(--accent); vertical-align: middle; margin-right: 6px; }
+.legend i.t { width: 10px; height: 10px; border-radius: 50%; background: none; border: 2px dashed var(--muted); }
+.scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: .85rem; }
+th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; }
+th:first-child, td:first-child, td.focus { text-align: left; }
+thead th { color: var(--muted); font-weight: 500; }
+td { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+td.focus { font-family: var(--body); white-space: normal; min-width: 12em; }
+tr.cur th, tr.cur td { background: var(--accent-soft); }
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+ul.list { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+ul.list li { display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+.case { font-family: var(--mono); font-size: .85rem; }
+.st { color: var(--muted); font-size: .8rem; text-align: right; }
+.foot { color: var(--muted); font-size: .78rem; }
+</style>
+<main class="wrap">
+  <header style="display:grid;gap:8px">
+    <h1>男の養生帖 KPI ボード</h1>
+    <div class="meta"><span>集計日 2026-10-14</span><span>目標 月10万円（2027年9月）</span><span>金額は載せていません</span></div>
+  </header>
+  <div class="phase"><span>いまの期</span><b>2026年11月末まで</b><span>重点: 検索に載る・収益の導線をつくる</span></div>
+  <section aria-labelledby="h-tiles"><h2 id="h-tiles">この期の目標に対して</h2><div class="tiles"><div class="tile warn" role="group" aria-label="公開記事数">
+  <div class="tile-head"><span class="tile-label">公開記事数</span><span class="pill warn">途中</span></div>
+  <div class="tile-val"><span class="num">28</span><span class="unit">本</span><span class="tgt">目標 33</span></div>
+  <div class="bar" aria-hidden="true"><span style="width:85%"></span></div>
+  <div class="tile-note">サイトの記事（自動で集計） </div>
+</div><div class="tile warn" role="group" aria-label="収益の導線がある記事">
+  <div class="tile-head"><span class="tile-label">収益の導線がある記事</span><span class="pill warn">途中</span></div>
+  <div class="tile-val"><span class="num">3</span><span class="unit">ページ</span><span class="tgt">目標 4</span></div>
+  <div class="bar" aria-hidden="true"><span style="width:75%"></span></div>
+  <div class="tile-note">アフィリエイトリンクが表示されるページ </div>
+</div><div class="tile low" role="group" aria-label="インデックス登録">
+  <div class="tile-head"><span class="tile-label">インデックス登録</span><span class="pill low">これから</span></div>
+  <div class="tile-val"><span class="num">5</span><span class="unit">ページ</span><span class="tgt">目標 25</span></div>
+  <div class="bar" aria-hidden="true"><span style="width:20%"></span></div>
+  <div class="tile-note">Search Console「ページ」 <span class="since">2026-10-05 時点</span></div>
+</div><div class="tile nodata" role="group" aria-label="検索の表示回数">
+  <div class="tile-head"><span class="tile-label">検索の表示回数</span><span class="pill nodata">データ待ち</span></div>
+  <div class="tile-val"><span class="num">—</span><span class="unit">回/週</span><span class="tgt">目標 300</span></div>
+  <div class="bar" aria-hidden="true"><span style="width:0%"></span></div>
+  <div class="tile-note">Search Console </div>
+</div><div class="tile nodata" role="group" aria-label="セッション">
+  <div class="tile-head"><span class="tile-label">セッション</span><span class="pill nodata">データ待ち</span></div>
+  <div class="tile-val"><span class="num">—</span><span class="unit">回/週</span><span class="tgt">目標 70</span></div>
+  <div class="bar" aria-hidden="true"><span style="width:0%"></span></div>
+  <div class="tile-note">GA4（月の目標を週に換算） </div>
+</div><div class="tile nodata" role="group" aria-label="ASP のクリック">
+  <div class="tile-head"><span class="tile-label">ASP のクリック</span><span class="pill nodata">データ待ち</span></div>
+  <div class="tile-val"><span class="num">—</span><span class="unit">回/週</span><span class="tgt">目標 2</span></div>
+  <div class="bar" aria-hidden="true"><span style="width:0%"></span></div>
+  <div class="tile-note">ASP 管理画面（月の目標を週に換算） </div>
+</div></div></section>
+  <section aria-labelledby="h-trend"><h2 id="h-trend">公開記事数の推移と各期の目標</h2>
+    <div class="card"><svg viewBox="0 0 720 260" role="img" aria-label="公開記事数の累計と目標">
+<line x1="44" x2="704" y1="226.0" y2="226.0" class="grid"/><text x="36" y="230.0" class="axis" text-anchor="end">0</text><line x1="44" x2="704" y1="184.0" y2="184.0" class="grid"/><text x="36" y="188.0" class="axis" text-anchor="end">14</text><line x1="44" x2="704" y1="142.0" y2="142.0" class="grid"/><text x="36" y="146.0" class="axis" text-anchor="end">28</text><line x1="44" x2="704" y1="100.0" y2="100.0" class="grid"/><text x="36" y="104.0" class="axis" text-anchor="end">42</text><line x1="44" x2="704" y1="58.0" y2="58.0" class="grid"/><text x="36" y="62.0" class="axis" text-anchor="end">56</text><line x1="44" x2="704" y1="16.0" y2="16.0" class="grid"/><text x="36" y="20.0" class="axis" text-anchor="end">70</text>
+<polyline points="44.0,223.0 44.0,223.0 44.0,220.0 44.0,220.0 44.0,217.0 44.0,217.0 44.0,214.0 44.0,214.0 44.0,211.0 68.2,211.0 68.2,208.0 68.2,208.0 68.2,205.0 68.2,205.0 68.2,202.0 69.9,202.0 69.9,199.0 71.6,199.0 71.6,196.0 71.6,196.0 71.6,193.0 80.3,193.0 80.3,190.0 85.5,190.0 85.5,187.0 85.5,187.0 85.5,184.0 85.5,184.0 85.5,181.0 85.5,181.0 85.5,178.0 85.5,178.0 85.5,175.0 85.5,175.0 85.5,172.0 85.5,172.0 85.5,169.0 88.9,169.0 88.9,166.0 88.9,166.0 88.9,163.0 88.9,163.0 88.9,160.0 88.9,160.0 88.9,157.0 88.9,157.0 88.9,154.0 88.9,154.0 88.9,151.0 88.9,151.0 88.9,148.0 90.6,148.0 90.6,145.0 90.6,145.0 90.6,142.0 97.6,142.0" class="line"/>
+<g class="now"><title>2026-10-14 時点: 28本</title><circle cx="97.6" cy="142.0" r="5"/>
+<text x="105.6" y="134.0" class="label">28本</text></g>
+<g class="tgtmark"><title>2026年11月末の目標: 33本</title><circle cx="178.8" cy="127.0" r="6"/><text x="178.8" y="248" class="axis" text-anchor="middle">26/11</text></g><g class="tgtmark"><title>2026年12月末の目標: 38本</title><circle cx="232.3" cy="112.0" r="6"/><text x="232.3" y="248" class="axis" text-anchor="middle">26/12</text></g><g class="tgtmark"><title>2027年3月末の目標: 50本</title><circle cx="387.8" cy="76.0" r="6"/><text x="387.8" y="248" class="axis" text-anchor="middle">27/03</text></g><g class="tgtmark"><title>2027年9月末の目標: 70本</title><circle cx="704.0" cy="16.0" r="6"/><text x="704.0" y="248" class="axis" text-anchor="middle">27/09</text></g>
+<text x="44" y="248" class="axis">26/09</text>
+</svg><div class="legend"><span><i></i>公開記事数（累計）</span><span><i class="t"></i>各期末の目標</span></div></div></section>
+  <section aria-labelledby="h-weekly"><h2 id="h-weekly">週ごとの実績（手入力・週次レポート）</h2>
+    <div class="card scroll"><table><thead><tr><th scope="col">週の初日</th><th scope="col">インデックス登録数</th><th scope="col">検索表示回数(週)</th><th scope="col">検索クリック(週)</th><th scope="col">セッション(週)</th><th scope="col">うちX流入(週)</th><th scope="col">ASPクリック(週)</th><th scope="col">発生件数(週)</th><th scope="col">承認件数(週)</th><th scope="col">提携済みで使える案件数</th></tr></thead><tbody><tr><td>2026-10-12</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>4</td></tr><tr><td>2026-10-05</td><td>5</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>3</td></tr></tbody></table></div></section>
+  <section aria-labelledby="h-phases"><h2 id="h-phases">期ごとの目標</h2>
+    <div class="card scroll"><table><thead><tr><th scope="col">期</th><th scope="col">記事</th><th scope="col">導線あり</th><th scope="col">インデックス</th><th scope="col">検索表示/週</th><th scope="col">セッション/月</th><th scope="col">ASPクリック/月</th><th scope="col">発生/月</th><th scope="col">重点</th></tr></thead><tbody><tr class="cur"><th scope="row">2026年11月末</th><td>33</td><td>4</td><td>25</td><td>300</td><td>300</td><td>10</td><td>0</td><td class="focus">検索に載る・収益の導線をつくる</td></tr><tr><th scope="row">2026年12月末</th><td>38</td><td>6</td><td>35</td><td>1,000</td><td>1,500</td><td>40</td><td>1</td><td class="focus">高単価の案件で初めての成約</td></tr><tr><th scope="row">2027年3月末</th><td>50</td><td>10</td><td>48</td><td>5,000</td><td>8,000</td><td>300</td><td>8</td><td class="focus">伸びる記事に集中（リライト・内部リンク）</td></tr><tr><th scope="row">2027年9月末</th><td>70</td><td>15</td><td>68</td><td>20,000</td><td>30,000</td><td>2,100</td><td>20</td><td class="focus">月10万円（確定）</td></tr></tbody></table></div></section>
+  <section aria-labelledby="h-ops"><h2 id="h-ops">運営の状況</h2>
+    <div class="cols">
+      <div class="card"><h2 style="font-size:.95rem;margin-bottom:8px">カテゴリ別の記事数</h2><ul class="list"><li><span>睡眠・疲労</span><span class="num">7</span></li><li><span>ヘア・AGA</span><span class="num">6</span></li><li><span>ボディ・栄養</span><span class="num">5</span></li><li><span>スキンケア</span><span class="num">3</span></li><li><span>ヒゲ・脱毛</span><span class="num">2</span></li><li><span>オーラルケア</span><span class="num">2</span></li><li><span>入門ガイド（カテゴリなし）</span><span class="num">1</span></li><li><span>運動・筋トレ</span><span class="num">1</span></li><li><span>泌尿器・性の悩み</span><span class="num">1</span></li></ul></div>
+      <div class="card"><h2 style="font-size:.95rem;margin-bottom:8px">進行中の案件</h2><ul class="list"><li><span class="case">0028-mens-toner-allinone</span><span class="st">進行中</span></li><li><span class="case">0039-forteca-otc</span><span class="st">進行中</span></li><li><span class="case">0045-x-post-improvement</span><span class="st">進行中</span></li><li><span class="case">0046-nocturia</span><span class="st">進行中</span></li></ul></div>
+      <div class="card"><h2 style="font-size:.95rem;margin-bottom:8px">そのほか</h2><ul class="list">
+        <li><span>オーナー依頼（未対応）</span><span class="num">31</span></li>
+        <li><span>X の予約投稿（これから）</span><span class="num">22</span></li>
+        <li><span>最後の予約日</span><span class="num">2026-11-09</span></li>
+        <li><span>使える提携案件</span><span class="num">4</span></li></ul></div>
+    </div></section>
+  <p class="foot">自動の指標はリポジトリから、手入力の指標は weekly.csv（Search Console・GA4・ASP）から集計しています。定義と目標の根拠は org/kpi/README.md。</p>
+</main>
