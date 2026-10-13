@@ -1,7 +1,7 @@
 # 00 発注書: 運営者が使っている道具（オーラルケア・ヘアケア）
 
 - 案件ID: 0016
-- ステータス: 進行中（10/16 のプライム感謝祭の前に公開）
+- ステータス: 公開済み（tools.html）
 - 起票日: 2026-09-29
 - 起票理由: backlog #29、D0013。オーナー指示（2026-09-29「Build the "what I use" page next… before the 10/16 Prime sale, then a Prime sale page and an X post. …I want to protect our moat」）
 

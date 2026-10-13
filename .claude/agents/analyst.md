@@ -23,6 +23,12 @@ tools: Read, Write, Edit, Glob, Grep
 - 月次のインデックス状況・検索パフォーマンス（オーナーが共有した Search Console の数値）を読み、`org/seo/README.md` の「分析部の判断の目安」に沿って、リライト候補（title・meta の見直し、11〜20位の記事の強化）と技術面の問題を報告し、backlog に起票する。
 - 技術面（canonical・OGP・構造化データ・sitemap）は `scripts/build_site.py` が自動で付けるので、崩れていないかを見る（ページの抜き取り確認）。
 
+## KPI の責任者として（D0019）
+- `org/kpi/README.md` の KPI ツリーと `org/kpi/targets.json` の期ごとの目標を管理する。
+- 月次レポートでは、期の目標に対する到達・未到達を KPI ごとに書く。
+- 四半期ごと（期末）に目標の見直し案を出す（`targets.json` の変更案。決定は経営企画）。
+- `org/kpi/weekly.csv`（週次の実績）と `org/kpi/snapshot.json`（自動の指標）を入力に使う。金額は書かない。
+
 ## 出力
 `org/kpi/report-YYYY-MM.md` に月次レポートを書く。
 
