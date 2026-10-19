@@ -2,7 +2,10 @@
 """Post today's queued announcements to X (formerly Twitter).
 
 Reads org/social/queue/*.json and posts every item whose "date" equals today's
-date in Japan time. Stateless by design: it runs once a day from GitHub
+date in Japan time and whose "kind" matches --kind. Two kinds:
+  link (default): an article announcement that contains the article URL.
+  fact: a short fact from a published article, with no URL (cheaper on the
+        X API and usually more engaging). "article" names the source article. Stateless by design: it runs once a day from GitHub
 Actions (see .github/workflows/x-post.yml, decision D0010).
 
 Credentials come only from environment variables (GitHub Actions secrets):
@@ -12,6 +15,7 @@ Usage:
   python3 scripts/x_post.py              # post today's items
   python3 scripts/x_post.py --dry-run    # print what would be posted
   python3 scripts/x_post.py --date 2026-10-05 --dry-run
+  python3 scripts/x_post.py --kind fact --dry-run
 """
 import argparse
 import base64
@@ -52,15 +56,17 @@ def weighted_length(text):
     return length
 
 
-def load_items(date):
+def load_items(date, kind="link"):
     items = []
     for path in sorted(glob.glob(QUEUE_GLOB)):
         with open(path, encoding="utf-8") as f:
             item = json.load(f)
+        if item.get("date", "") < date:
+            continue  # already posted; past items are not re-validated
         problems = validate(item)
         if problems:
             raise SystemExit(f"{path}: " + "; ".join(problems))
-        if item["date"] == date:
+        if item["date"] == date and item.get("kind", "link") == kind:
             items.append((path, item))
     return items
 
@@ -74,11 +80,21 @@ def validate(item):
         return problems
     if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", item["date"]):
         problems.append("date must be YYYY-MM-DD")
-    if SITE_PREFIX not in item["text"]:
+    kind = item.get("kind", "link")
+    if kind not in ("link", "fact"):
+        problems.append('kind must be "link" or "fact"')
+    elif kind == "link" and SITE_PREFIX not in item["text"]:
         problems.append("text must contain the article URL")
+    elif kind == "fact":
+        if URL_RE.search(item["text"]):
+            problems.append("a fact post must not contain a URL")
+        if "#PR" in item["text"] or article_has_ad_links(item["article"]):
+            problems.append("a fact post must come from an article without affiliate links")
+        if not os.path.exists(item["article"]):
+            problems.append(f"source article {item['article']} not found")
     if weighted_length(item["text"]) > 280:
         problems.append(f"text too long ({weighted_length(item['text'])} > 280)")
-    if article_has_ad_links(item["article"]) and "#PR" not in item["text"]:
+    if kind == "link" and article_has_ad_links(item["article"]) and "#PR" not in item["text"]:
         problems.append(f"{item['article']} renders affiliate links but the text has no #PR")
     return problems
 
@@ -145,6 +161,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--date", help="override date (YYYY-MM-DD, Japan time)")
+    ap.add_argument("--kind", choices=("link", "fact"), default="link")
     ap.add_argument("--window", help="post only if the Japan-time hour is within START-END (e.g. 19-23)")
     args = ap.parse_args()
 
@@ -156,8 +173,8 @@ def main():
             return 0
 
     date = args.date or datetime.datetime.now(JST).date().isoformat()
-    items = load_items(date)
-    print(f"date={date} items={len(items)}")
+    items = load_items(date, args.kind)
+    print(f"date={date} kind={args.kind} items={len(items)}")
     if not items:
         return 0
 
