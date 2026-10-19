@@ -61,6 +61,8 @@ def load_items(date, kind="link"):
     for path in sorted(glob.glob(QUEUE_GLOB)):
         with open(path, encoding="utf-8") as f:
             item = json.load(f)
+        if item.get("date", "") < date:
+            continue  # already posted; past items are not re-validated
         problems = validate(item)
         if problems:
             raise SystemExit(f"{path}: " + "; ".join(problems))
