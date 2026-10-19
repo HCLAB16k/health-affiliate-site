@@ -1,5 +1,5 @@
 {
-  "today": "2026-10-14",
+  "today": "2026-10-19",
   "auto": {
     "articles": 29,
     "articles_by_category": {
@@ -61,7 +61,7 @@
         "status": "進行中"
       }
     ],
-    "x_scheduled_upcoming": 23,
+    "x_scheduled_upcoming": 19,
     "x_last_scheduled": "2026-11-09"
   }
 }
