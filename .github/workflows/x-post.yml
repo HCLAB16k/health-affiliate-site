@@ -1,5 +1,6 @@
 # Daily X (Twitter) announcement of reviewed posts in org/social/queue/ (decision D0010).
-# Target: around 21:00 JST (evening, when office workers are most active on X).
+# Target: around 21:00 JST for article announcements ("link" posts) and a
+# short link-free fact post ("fact", 2-3 a week) earlier in the day, 12-17h JST.
 # GitHub's scheduler can start jobs hours late, so the job is scheduled hourly;
 # the first run that starts inside the window posts, and a per-day cache key
 # stops the later runs from posting again.
@@ -20,6 +21,10 @@ on:
       date:
         description: "Override date (YYYY-MM-DD, Japan time). Empty = today"
         required: false
+      kind:
+        description: "link or fact (manual runs only; scheduled runs do both)"
+        required: false
+        default: "link"
 
 permissions:
   contents: read
@@ -31,6 +36,16 @@ concurrency:
 jobs:
   post:
     runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 1
+      matrix:
+        include:
+          - kind: link
+            window: "18-23"
+            marker: "x-posted"
+          - kind: fact
+            window: "12-17"
+            marker: "x-posted-fact"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -45,7 +60,7 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: .x-posted
-          key: x-posted-${{ steps.jst.outputs.date }}
+          key: ${{ matrix.marker }}-${{ steps.jst.outputs.date }}
       - name: Post today's items
         if: steps.done.outputs.cache-hit != 'true'
         id: post
@@ -57,12 +72,15 @@ jobs:
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
           DATE_OVERRIDE: ${{ inputs.date }}
           SCHEDULED: ${{ github.event_name == 'schedule' }}
+          KIND: ${{ github.event_name == 'workflow_dispatch' && inputs.kind || matrix.kind }}
+          WINDOW: ${{ matrix.window }}
         run: |
           set -o pipefail
-          args=()
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "$KIND" != "${{ matrix.kind }}" ]; then echo "manual run for $KIND; skipping ${{ matrix.kind }}"; exit 0; fi
+          args=(--kind "$KIND")
           if [ "$DRY_RUN" = "true" ]; then args+=(--dry-run); fi
           if [ -n "$DATE_OVERRIDE" ]; then args+=(--date "$DATE_OVERRIDE"); fi
-          if [ "$SCHEDULED" = "true" ]; then args+=(--window 18-23); fi
+          if [ "$SCHEDULED" = "true" ]; then args+=(--window "$WINDOW"); fi
           python3 scripts/x_post.py "${args[@]}" | tee out.txt
           if grep -q "HTTP 201\|already posted" out.txt; then echo "posted=true" >> "$GITHUB_OUTPUT"; fi
       - name: Remember today's post
@@ -73,4 +91,4 @@ jobs:
         uses: actions/cache/save@v4
         with:
           path: .x-posted
-          key: x-posted-${{ steps.jst.outputs.date }}
+          key: ${{ matrix.marker }}-${{ steps.jst.outputs.date }}

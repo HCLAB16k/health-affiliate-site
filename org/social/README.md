@@ -6,6 +6,11 @@
 3. PASS 後、経営企画が PR をマージ（D0006・D0010）。
 4. GitHub Actions（`.github/workflows/x-post.yml`）が毎日、夜の時間帯（12:37〜22:37 日本時間に毎時起動〈GitHub の起動は6〜7時間遅れることがある〉。GitHub の起動は遅れることがあるため、18〜23時の窓に入った最初の実行だけが投稿し、同じ日の2回目以降は日付ごとのキャッシュで止まる）に `scripts/x_post.py` を実行し、`date` が今日のものを投稿する。2026-10-05 変更: 12:07 の予定が約6時間遅れて夕方に実行されていたため、30代以上の会社員が X を見やすい夜（21時前後）に合わせた。
 
+## リンクなしの事実の投稿（fact、2026-10-19〜）
+- 週2〜3本。公開済みの記事（アフィリエイトリンクの無い記事に限る）の事実を1つだけ、URL なしで投稿する（X API の費用は $0.015／件、URL 付きは $0.20）。
+- 形式: `{"date": "…", "kind": "fact", "article": "articles/<根拠の記事>.html", "text": "…"}`。`scripts/x_post.py` が URL・#PR・広告リンクのある記事を拒否する。
+- 投稿の時間帯は 12〜17時（日本時間）。リンクの告知（18〜23時）と同じ日でもよい。審査は告知と同じ（x-style-guide 版1）。
+
 ## ファイル形式
 ```json
 {"date": "2026-10-05", "article": "articles/protein-guide.html", "text": "本文 https://hclab16k.github.io/health-affiliate-site/articles/protein-guide.html #PR"}
