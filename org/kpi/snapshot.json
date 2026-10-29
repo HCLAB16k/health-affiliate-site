@@ -1,5 +1,5 @@
 {
-  "today": "2026-10-29",
+  "today": "2026-10-30",
   "auto": {
     "articles": 30,
     "articles_by_category": {
@@ -51,7 +51,7 @@
       "protein-guide",
       "tools"
     ],
-    "owner_inbox_open": 36,
+    "owner_inbox_open": 38,
     "active_cases": [
       {
         "case": "0028-mens-toner-allinone",
@@ -64,9 +64,13 @@
       {
         "case": "0047-personal-gym-page",
         "status": "進行中"
+      },
+      {
+        "case": "0049-ashwagandha-ctr",
+        "status": "進行中"
       }
     ],
-    "x_scheduled_upcoming": 14,
+    "x_scheduled_upcoming": 13,
     "x_last_scheduled": "2026-11-09"
   }
 }
