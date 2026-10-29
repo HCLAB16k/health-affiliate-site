@@ -34,3 +34,11 @@
 - 作り方の箱に「要点には番号を付けず、根拠は→の節にある」の1行を足す。
 - バッチ1: ashwagandha-japan、creatine、protein-guide、caffeine-limits、minoxidil-finasteride-guideline（Search Console で表示のある順）
 - 以降: 残り24本を5本ずつ。
+
+## 段階2のバッチ割り（2026-10-29 決定。利用上限に配慮し1日1〜2バッチ、同時に1バッチだけ）
+- バッチ2: glp1-diet、ed-otc-tadalafil、nocturia-night-urination、strength-training-guide、loh-testosterone
+- バッチ3: aga-selfcare-vs-clinic、hair-scalp-care、hair-tonic-review、dandruff-shampoo、hair-damage-care
+- バッチ4: skincare-antiaging、retinoids-japan-vs-overseas、winter-shaving-skin、mens-bb-cream、beard-hair-removal
+- バッチ5: sleep-support、melatonin-japan-vs-us、fatigue-recovery、blue-light-glasses、winter-vitamin-d
+- バッチ6: body-odor-sweat、oral-care-basics、whitening-japan-vs-overseas、mens-selfcare-start
+- ペース: 5時間枠の使用が約60%を超えそう、または週の使用が約50%を超えたら、次のバッチを翌日に回す。火曜・木曜の定期実行と重ならない時間に回す。
