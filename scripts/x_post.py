@@ -84,7 +84,7 @@ def rotation_warnings(upcoming):
             out.append(f'{a["date"]} and {b["date"]} both use type {a["type"]}')
     for i in range(len(seq)):
         last5 = seq[max(0, i - 4): i + 1]
-        if len(last5) == 5 and sum(x["text"].lstrip("#PR ").split("\n")[0].rstrip().endswith("？") for x in last5) > 2:
+        if len(last5) == 5 and sum(x["text"].removeprefix("#PR ").split("\n")[0].rstrip().endswith("？") for x in last5) > 2:
             out.append(f'more than 2 question first lines in the 5 posts up to {seq[i]["date"]}')
     for x in seq:
         if x["date"] >= "2026-10-30" and not x.get("type"):
