@@ -1,0 +1,46 @@
+# Notify IndexNow (Bing and other participating engines; not Google) of pages
+# changed by each publish, once GitHub Pages has deployed them (D0021 follow-up).
+# The key is public by design: the engines fetch 85426c61f7f008ceeccb62379df9b5e8.txt from the site root.
+name: IndexNow
+
+on:
+  workflow_run:
+    workflows: ["pages-build-deployment"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ping:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    env:
+      SITE: https://hclab16k.github.io/health-affiliate-site
+      KEY: 85426c61f7f008ceeccb62379df9b5e8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+          fetch-depth: 2
+      - name: Collect changed pages
+        run: |
+          git diff --name-only HEAD~1 HEAD -- '*.html' \
+            | grep -v -E '^(org/|googlef)' \
+            | sed -e 's#index\.html$##' -e "s#^#$SITE/#" > urls.txt || true
+          cat urls.txt
+      - name: Submit to IndexNow
+        run: |
+          if [ ! -s urls.txt ]; then echo "No changed pages"; exit 0; fi
+          python3 - <<'PY'
+          import json, os, urllib.request
+          site, key = os.environ["SITE"], os.environ["KEY"]
+          urls = [u.strip() for u in open("urls.txt") if u.strip()][:1000]
+          body = json.dumps({"host": "hclab16k.github.io", "key": key,
+                             "keyLocation": f"{site}/{key}.txt", "urlList": urls}).encode()
+          req = urllib.request.Request("https://api.indexnow.org/indexnow", data=body,
+                                       headers={"Content-Type": "application/json; charset=utf-8"})
+          with urllib.request.urlopen(req, timeout=30) as r:
+              print("IndexNow", r.status, len(urls), "URLs")
+          PY
