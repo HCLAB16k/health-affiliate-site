@@ -57,7 +57,7 @@ def weighted_length(text):
 
 
 def load_items(date, kind="link"):
-    items = []
+    items, upcoming = [], []
     for path in sorted(glob.glob(QUEUE_GLOB)):
         with open(path, encoding="utf-8") as f:
             item = json.load(f)
@@ -68,7 +68,28 @@ def load_items(date, kind="link"):
             raise SystemExit(f"{path}: " + "; ".join(problems))
         if item["date"] == date and item.get("kind", "link") == kind:
             items.append((path, item))
+        upcoming.append(item)
+    for w in rotation_warnings(upcoming):
+        print("WARNING (style guide v2 rotation):", w)
     return items
+
+
+def rotation_warnings(upcoming):
+    """Style guide v2 (0053): vary the post type and the first line.
+    Warnings only, so a rotation slip never blocks posting; --check makes them fatal."""
+    seq = sorted(upcoming, key=lambda i: (i["date"], i.get("kind", "link") == "link"))
+    out = []
+    for a, b in zip(seq, seq[1:]):
+        if a.get("type") and a.get("type") == b.get("type"):
+            out.append(f'{a["date"]} and {b["date"]} both use type {a["type"]}')
+    for i in range(len(seq)):
+        last5 = seq[max(0, i - 4): i + 1]
+        if len(last5) == 5 and sum(x["text"].removeprefix("#PR ").split("\n")[0].rstrip().endswith("？") for x in last5) > 2:
+            out.append(f'more than 2 question first lines in the 5 posts up to {seq[i]["date"]}')
+    for x in seq:
+        if x["date"] >= "2026-10-30" and not x.get("type"):
+            out.append(f'{x["date"]} {x["article"]} has no "type"')
+    return out
 
 
 def validate(item):
@@ -162,6 +183,7 @@ def main():
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--date", help="override date (YYYY-MM-DD, Japan time)")
     ap.add_argument("--kind", choices=("link", "fact"), default="link")
+    ap.add_argument("--check", action="store_true", help="validate the queue and fail on rotation warnings")
     ap.add_argument("--window", help="post only if the Japan-time hour is within START-END (e.g. 19-23)")
     args = ap.parse_args()
 
@@ -173,6 +195,17 @@ def main():
             return 0
 
     date = args.date or datetime.datetime.now(JST).date().isoformat()
+    if args.check:
+        load_items(date, args.kind)
+        upcoming = []
+        for path in sorted(glob.glob(QUEUE_GLOB)):
+            with open(path, encoding="utf-8") as f:
+                item = json.load(f)
+            if item.get("date", "") >= date:
+                upcoming.append(item)
+        bad = rotation_warnings(upcoming)
+        print("queue OK" if not bad else f"{len(bad)} rotation problem(s)")
+        return 1 if bad else 0
     items = load_items(date, args.kind)
     print(f"date={date} kind={args.kind} items={len(items)}")
     if not items:
