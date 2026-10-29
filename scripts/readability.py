@@ -26,6 +26,7 @@ def measure(path, show_long=False):
     body = re.sub(r"<table.*?</table>", "", body, flags=re.S)
     body = re.sub(r"<blockquote.*?</blockquote>", "", body, flags=re.S)  # quoted originals are not ours to shorten
     body = re.sub(r'<ol class="refs".*?</ol>|<h2[^>]*>参考資料.*$', "", body, flags=re.S)
+    body = re.sub(r'<sup class="cite">(.*?)</sup>', r"［\1］", body)  # D0022 superscripts count like ［n］
     paras = [text(p) for p in re.findall(r"<p[^>]*>(.*?)</p>", body, flags=re.S)]
     paras = [p for p in paras if p and not p.startswith("PR/")]
     items = [text(li) for li in re.findall(r"<li[^>]*>(.*?)</li>", body, flags=re.S)]

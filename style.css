@@ -585,3 +585,5 @@ footer.site-footer p { margin-top: 30px; color: #7f828a; font-size: 0.76rem; }
 .samecat-title{font-size:18px}
 article blockquote{margin:12px 0 16px;padding:10px 16px;border-left:3px solid var(--line,#ccc);background:var(--soft,#fafafa);color:inherit;font-size:.95em}
 article blockquote p{margin:0}
+/* D0022: source numbers as small superscripts */
+article sup.cite { font-size: 0.68em; color: var(--ink-soft); line-height: 0; margin-left: 1px; font-weight: normal; }
