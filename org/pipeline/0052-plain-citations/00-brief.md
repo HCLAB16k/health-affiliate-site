@@ -42,3 +42,6 @@
 - バッチ5: sleep-support、melatonin-japan-vs-us、fatigue-recovery、blue-light-glasses、winter-vitamin-d
 - バッチ6: body-odor-sweat、oral-care-basics、whitening-japan-vs-overseas、mens-selfcare-start
 - ペース: 5時間枠の使用が約60%を超えそう、または週の使用が約50%を超えたら、次のバッチを翌日に回す。火曜・木曜の定期実行と重ならない時間に回す。
+
+## 完了（2026-10-30）
+- 段階1（desk-back-pain）と段階2（全30記事の「先に要点」、バッチ1〜6）を公開。本文の出典番号は全記事で上付き表示（D0022 追記）。持ち越しは backlog #58。
