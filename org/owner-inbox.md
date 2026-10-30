@@ -147,6 +147,7 @@ AIの部署では実行できない、人間（オーナー）にしかできな
   - 2026-10-19 オーナー: 登録済み12・未登録1。リクエスト 10/19 分: nocturia・ed-otc・strength-training・ashwagandha・blue-light・dandruff・hair-tonic・mens-selfcare・winter-shaving（9件）。トップページは登録済み。**次回（10/20 以降）**: caffeine・creatine・glp1-diet・minoxidil-finasteride-guideline・whitening・body-odor・loh・beard-hair-removal・hair-damage-care・mens-bb-cream の順に、登録済みでなければリクエスト
   - 2026-10-29 オーナー: 更新した3本（desk-back-pain・ashwagandha-japan・ed-otc-tadalafil）をリクエスト。ashwagandha・ed-otc はすでに登録済みだった（更新後の再クロールの依頼として有効）。上の10件（caffeine〜mens-bb-cream）の結果は未回答
   - 2026-10-29 オーナー: 登録済み21・未登録1（クロール済み-未登録＝melatonin）。**未登録の記事**: protein-guide・tools（収益ページ、最優先）・aga-selfcare-vs-clinic・hair-scalp-care・sleep-support・fatigue-recovery・winter-vitamin-d・retinoids・hair-damage-care・beard-hair-removal、desk-back-pain（10/29 リクエスト済み）。melatonin は 11/5 ごろ再リクエスト。カテゴリ7ページ・about 等は後回しでよい
+  - 2026-10-30 オーナー: 新記事 short-sleeper をリクエスト
 - [ ] **D13.（数日後）サイトマップの状態の再確認**: Search Console →「サイトマップ」で状態が「成功しました」になったか
   - 2026-10-29 オーナーがリポジトリ `hclab16k.github.io` を作成し、ホスト直下の robots.txt に `Sitemap:` 行を追加（経営企画が配信を確認: https://hclab16k.github.io/robots.txt が 200）。Google は robots.txt を通常1日ほどで読み直す。**1週間後（11/5 ごろ）**にサイトマップの状態を再確認
   - 2026-10-04 まだ「取得できませんでした」（最終読み込み日時なし）。経営企画の確認: sitemap.xml は 200・application/xml・XML 妥当・22 URL、Googlebot の UA でも 200、ホスト直下の robots.txt は 404（＝制限なし、問題なし）→ ファイル側の問題は見当たらない。次の手: ①URL 検査で sitemap.xml の「公開 URL をテスト」 ②`sitemap.xml?v=2` で別送信 ③「ページ」レポートでインデックス数を確認
