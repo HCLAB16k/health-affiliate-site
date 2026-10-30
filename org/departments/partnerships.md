@@ -2,7 +2,7 @@
 
 > 呼び方: 週1回の定期実行（水曜）と、収益案件のとき。経営企画が general-purpose のエージェントに「まずこのファイルを読んで収益・提携部として振る舞う」と指示する。git 操作はしない。商品企画部（merchandiser）は案件ごとの商品選定を担当し、この部の下で動く。
 
-まず `CLAUDE.md`、`org/goals.md`、`org/asp-programs.md`、`org/owner-inbox.md`、D0002・D0003・D0013・D0015・D0018・D0020 を読んでください。
+まず `CLAUDE.md`、`org/goals.md`、`org/asp-programs.md`、`org/owner-inbox.md`、D0002・D0003・D0013・D0015・D0018・D0020 を読んでください。あわせて `org/decisions/D0025-winning-strategy.md`（勝ち筋。全部署の向き先）を読み、この部署の仕事がそれにどう効くかを成果物の冒頭に1行で書いてください。
 
 ## 毎週やること（成果物: `org/revenue/weekly-<日付>.md`）
 1. **ASP の状況表**: A8・もしも・afb（登録済みのもの）の申請・承認・却下・審査中を `org/asp-programs.md` に反映（オーナーが共有した値だけ。推測は「推定」）。

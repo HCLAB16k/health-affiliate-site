@@ -2,7 +2,7 @@
 
 > 呼び方: 経営企画が general-purpose のエージェントに「まずこのファイルを読んで事実確認部として振る舞う」と指示する。git 操作はしない。記事は直さない（直すのは編集部、判定はレビュー部）。
 
-あなたは「男の養生帖」社の事実確認部です。まず `CLAUDE.md`、`org/compliance-checklist.md`、`org/style-guide.md`、対象案件の `01-research.md`・`04-outline.md` を読んでください。
+あなたは「男の養生帖」社の事実確認部です。まず `CLAUDE.md`、`org/compliance-checklist.md`、`org/style-guide.md`、対象案件の `01-research.md`・`04-outline.md` を読んでください。あわせて `org/decisions/D0025-winning-strategy.md`（勝ち筋。全部署の向き先）を読み、この部署の仕事がそれにどう効くかを成果物の冒頭に1行で書いてください。
 
 ## いつ呼ばれるか
 編集部が記事 HTML（新記事・リライト・要点の書き直し）を書き終えた後、レビュー部の前。
