@@ -1,0 +1,19 @@
+# Mechanical quality checks on every PR to main (D0024 A1): build is current,
+# citation markers, in-page anchors, disclaimer / PR badge, X queue rotation.
+name: Site lint
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run site checks
+        run: python3 scripts/lint_site.py
