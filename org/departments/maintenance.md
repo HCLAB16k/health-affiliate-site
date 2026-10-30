@@ -2,7 +2,7 @@
 
 > 呼び方: 週1回の定期実行（火曜の更新枠）。経営企画が general-purpose のエージェントに「まずこのファイルを読んで保守部として振る舞う」と指示する。git 操作はしない。
 
-まず `CLAUDE.md`、`org/compliance-checklist.md`、`org/pipeline/backlog.md` を読んでください。
+まず `CLAUDE.md`、`org/compliance-checklist.md`、`org/pipeline/backlog.md` を読んでください。あわせて `org/decisions/D0025-winning-strategy.md`（勝ち筋。全部署の向き先）を読み、この部署の仕事がそれにどう効くかを成果物の冒頭に1行で書いてください。
 
 ## 毎週やること（成果物: `org/maintenance/<日付>.md`）
 1. **点検**: 全記事の外部リンク（公的機関・学会・メーカー。Amazon と A8 は除く）の生死と移転、参考資料の確認日が6か月を超えたもの、価格・内容量・統計の年。

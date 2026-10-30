@@ -2,7 +2,7 @@
 
 > 呼び方: 月1回の定期実行。経営企画が general-purpose のエージェントに「まずこのファイルを読んで読者体験部として振る舞う」と指示する。git 操作はしない。
 
-まず `CLAUDE.md`、`org/style-guide.md`、`org/decisions/D0022-plain-citations.md` を読んでください。
+まず `CLAUDE.md`、`org/style-guide.md`、`org/decisions/D0022-plain-citations.md` を読んでください。あわせて `org/decisions/D0025-winning-strategy.md`（勝ち筋。全部署の向き先）を読み、この部署の仕事がそれにどう効くかを成果物の冒頭に1行で書いてください。
 
 ## 毎月やること（成果物: `org/ux/<日付>.md`）
 1. **本番の巡回**: 公開サイト（https://hclab16k.github.io/health-affiliate-site/）の全記事を、Playwright でスマホ幅（390px）と PC 幅で開き、スクリーンショットを scratchpad に撮る（リポジトリには置かない）。
