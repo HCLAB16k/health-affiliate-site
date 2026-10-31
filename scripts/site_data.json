@@ -291,7 +291,7 @@
       "title": "筋トレは週何回・何分？",
       "tag": "FIT / JAPAN, WHO &amp; US",
       "desc": "筋トレは週に何回が目安か、時間の目安は示されているのか、始める前に確かめることと、ジムと契約する前の確認点が分かります。",
-      "updated": "2026-10-29"
+      "updated": "2026-10-31"
     },
     {
       "slug": "ed-otc-tadalafil",
@@ -337,6 +337,15 @@
       "tag": "SKIN / LOTION &amp; ALL-IN-ONE",
       "desc": "化粧水＋乳液か、オールインワン1本かを選ぶときに見る点と、医薬部外品の見分け方、定期便の解約で確かめることを説明します。",
       "updated": "2026-10-30"
+    },
+    {
+      "slug": "personal-gym-checklist",
+      "category": "fit",
+      "date": "2026-10-31",
+      "title": "パーソナルジムは契約前に何を比べる？",
+      "tag": "FIT / CONTRACT &amp; PRICE TABLE",
+      "desc": "パーソナルジムを契約する前に確かめたい総額・期間・解約の条件と、条件別にどこを見るか、掲載するジムの料金を整理しました。",
+      "updated": "2026-10-31"
     }
   ],
   "latest_count": 6,
