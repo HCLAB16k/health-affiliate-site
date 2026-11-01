@@ -587,3 +587,12 @@ article blockquote{margin:12px 0 16px;padding:10px 16px;border-left:3px solid va
 article blockquote p{margin:0}
 /* D0022: source numbers as small superscripts */
 article sup.cite { white-space: nowrap; font-size: 0.68em; color: var(--ink-soft); line-height: 0; margin-left: 1px; font-weight: normal; }
+
+/* ---------- UX audit 2026-11-01 (org/ux/2026-11-01.md #1 #6 #7) ---------- */
+@media (max-width: 640px) {
+  nav.cat-nav .inner { flex-wrap: wrap; white-space: normal; overflow-x: visible; gap: 0 16px; }
+  nav.cat-nav a { display: inline-block; padding: 8px 0; font-size: 0.8rem; white-space: nowrap; }
+  .crumbs a { display: inline-block; padding: 4px 0; }
+  footer.site-footer a { display: inline-block; padding: 4px 0; }
+}
+table.compare:has(th:nth-child(6)) th, table.compare:has(th:nth-child(6)) td { min-width: 0; }

@@ -87,3 +87,8 @@
 | 66 | 日本化粧品工業会の適正広告ガイドライン 2020年版を出典にしている9記事を、改訂α版（2026-07-24）に照合して差し替え | 保守 | 品質 | 中 | 未着手 | 2026-10-30 0028 事実確認 |
 | 67 | aga-selfcare-vs-clinic（0001）の持ち越し（0056 事実確認・レビュー）: 掲載基準 l.285 の「（推奨度Aの治療）」を削る（院の表は 0056 にだけ置く）。 「一般に自由診療…自己負担」に東京都の資料の出典とカルプロニウム（保険適応、GL2017 CQ7）の留保（l.240・243・335）、医療広告GLの4点を「限定解除の要件」と書く（l.70・250・265） | 保守 | 品質 | 高 | 未着手 | 2026-10-31 0056 事実確認 |
 | 68 | keywords.csv に医療脱毛・ヒゲ脱毛の語（0009・0057 の狙う語）とジム・AGA の比較ページの語を登録（分析部） | SEO | 集客 | 中 | 未着手 | 2026-10-31 0057 |
+| 69 | 比較ページへの本文内リンク（UX 2026-11-01 #2、D0025）: hair-scalp-care・hair-tonic-review・minoxidil-finasteride-guideline・hair-damage-care・dandruff-shampoo → aga-clinic-cost-guide、desk-back-pain・protein-guide → personal-gym-checklist、retinoids-japan-vs-overseas → mens-toner-allinone、mens-selfcare-start → 重点3ページ。本文の文脈に1文ずつ（差分審査）。lint の送客数は自動の関連記事一覧を除いて数える | リライト | 送客 | 高 | 未着手 |
+| 70 | スマホの比較表（personal-gym-checklist ほか2列の表）をカードにせず表のまま見せる CSS（UX #4、:has を使う。見た目の確認つき） | 技術 | UX | 中 | 未着手 |
+| 71 | スマホで目次を上に寄せる／「目次へ戻る」の導線（UX #5） | 技術 | UX | 中 | 未着手 |
+| 72 | カードのタグを日本語に（UX #8、build_site.py と site_data） | 技術 | UX | 低 | 未着手 |
+| 73 | トップ・カテゴリページに比較ページの固定の置き場を作る（UX #9、D0025） | 技術 | 送客 | 中 | 未着手 |
