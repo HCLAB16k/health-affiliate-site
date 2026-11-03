@@ -291,7 +291,7 @@
       "title": "筋トレは週何回・何分？",
       "tag": "FIT / JAPAN, WHO &amp; US",
       "desc": "筋トレは週に何回が目安か、時間の目安は示されているのか、始める前に確かめることと、ジムと契約する前の確認点が分かります。",
-      "updated": "2026-10-31"
+      "updated": "2026-11-03"
     },
     {
       "slug": "ed-otc-tadalafil",
@@ -364,6 +364,15 @@
       "tag": "GROOMING / COST &amp; CONTRACT",
       "desc": "医療脱毛のコース代のほかにかかりうる費用、契約前に書面で見る点、途中でやめるときや院が倒産したときの扱いをまとめました。",
       "updated": "2026-10-31"
+    },
+    {
+      "slug": "gym-after-course",
+      "category": "fit",
+      "date": "2026-11-03",
+      "title": "パーソナルジムが終わった後は？",
+      "tag": "FIT / AFTER COURSE &amp; CONTRACT",
+      "desc": "コースが終わったあと、やめたら体重や筋力は戻るのか、月額・回数券・自主トレのどれで続けるか、契約で確かめる点を順に紹介します。",
+      "updated": "2026-11-03"
     }
   ],
   "latest_count": 6,
