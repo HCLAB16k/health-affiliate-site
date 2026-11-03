@@ -98,3 +98,4 @@
 | 77 | パーソナルジムの2か月コースが終わったら？（卒業後の続け方と、契約の形の選び方） | 新規（運動） | 集客→送客: personal-gym-checklist（#by-need・#table） | 高 | 未着手 | 同 候補3。効果の保証・ビフォーアフター・体験談なし（景表法）。ジムのリンクは比較ページだけ |
 | 78 | 40代・50代のヒゲ脱毛と白髪（まず beard-hair-removal の節として。需要が見えたら新記事） | リライト（→新規の可能性） | 送客: medical-hair-removal-cost（#cost・#checklist） | 中 | 未着手 | 同 候補4。厚労省 医政医発第105号（C18 で要取得）を一緒に取得。院の比較・「永久」なし |
 | 79 | 医療費控除の FAQ を personal-gym-checklist（指定運動療法施設）と medical-hair-removal-cost（所得税基本通達73-4）に追加 | リライト（比較ページ） | 収益ページの強化 | 中 | 未着手 | 同 候補5。「実質○円」等の表現なし。既存の aga-clinic-cost-guide の FAQ に書き方を揃える |
+| 80 | 院の枠（第2層）を aga-clinic-cost-guide・medical-hair-removal-cost に入れる時点で、両ページへの全リンク元を grep で洗い出し、送客文（とくに minoxidil→#simulate、hair-tonic→#checklist、mens-selfcare-start→#cost・#contract）をまとめてレビューに回す（保守 2026-11-03 レビュー R4） | 審査 | 送客 | 高（第2層の前提） | 未着手 | 第2層の案件の 00 に条件として転記する |
