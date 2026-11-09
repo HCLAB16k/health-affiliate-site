@@ -1,7 +1,7 @@
 {
-  "today": "2026-11-02",
+  "today": "2026-11-09",
   "auto": {
-    "articles": 35,
+    "articles": 36,
     "articles_by_category": {
       "ヘア・AGA": 7,
       "入門ガイド（カテゴリなし）": 1,
@@ -10,7 +10,7 @@
       "オーラルケア": 2,
       "ボディ・栄養": 5,
       "睡眠・疲労": 8,
-      "運動・筋トレ": 3,
+      "運動・筋トレ": 4,
       "泌尿器・性の悩み": 2
     },
     "article_dates": [
@@ -48,7 +48,8 @@
       "2026-10-30",
       "2026-10-31",
       "2026-10-31",
-      "2026-10-31"
+      "2026-10-31",
+      "2026-11-03"
     ],
     "monetized_pages": 3,
     "monetized_list": [
@@ -56,7 +57,7 @@
       "protein-guide",
       "tools"
     ],
-    "owner_inbox_open": 39,
+    "owner_inbox_open": 44,
     "active_cases": [
       {
         "case": "0028-mens-toner-allinone",
@@ -83,7 +84,7 @@
         "status": "進行中"
       }
     ],
-    "x_scheduled_upcoming": 9,
-    "x_last_scheduled": "2026-11-09"
+    "x_scheduled_upcoming": 0,
+    "x_last_scheduled": null
   }
 }
