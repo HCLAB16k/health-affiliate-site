@@ -104,3 +104,4 @@
 | 83 | personal-gym-checklist の2社目（R4）: 男性が使え総額が公式で確認できるジムの承認後に商品企画部 | 収益 | 収益 | 中 | 承認待ち |
 | 84 | 0056・0057 第2版（院の枠、R2）: 院の承認・広告主の了承・自治体照会の判断がそろってから起票。#80 を条件に転記 | 収益 | 収益 | 高（条件待ち） | オーナー待ち |
 | 85 | hair-tonic-review・minoxidil-finasteride-guideline から aga-oral-treatment-timeline への1文リンク（0059 の 04 の文案を使う） | 保守 | 送客 | 中 | 0059 公開後 |
+| 86 | minoxidil-finasteride-guideline の #approval と比較表を、PMDA 医療用医薬品 情報検索の結果（2026-11-10「ミノキシジル」0件、.sources/pmda_iyakusearch_minoxidil_20261110.txt）に合わせて更新（0059 05 の提案） | 保守 | 品質 | 中 | 未着手 |
