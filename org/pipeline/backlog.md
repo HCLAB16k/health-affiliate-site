@@ -98,7 +98,7 @@
 | 77 | パーソナルジムの2か月コースが終わったら？（卒業後の続け方と、契約の形の選び方） | 新規（運動） | 集客→送客: personal-gym-checklist（#by-need・#table） | 高 | 未着手 | 同 候補3。効果の保証・ビフォーアフター・体験談なし（景表法）。ジムのリンクは比較ページだけ |
 | 78 | 40代・50代のヒゲ脱毛と白髪（まず beard-hair-removal の節として。需要が見えたら新記事） | リライト（→新規の可能性） | 送客: medical-hair-removal-cost（#cost・#checklist） | 中 | 未着手 | 同 候補4。厚労省 医政医発第105号（C18 で要取得）を一緒に取得。院の比較・「永久」なし |
 | 79 | 医療費控除の FAQ を personal-gym-checklist（指定運動療法施設）と medical-hair-removal-cost（所得税基本通達73-4）に追加 | リライト（比較ページ） | 収益ページの強化 | 中 | 未着手 | 同 候補5。「実質○円」等の表現なし。既存の aga-clinic-cost-guide の FAQ に書き方を揃える |
-| 80 | 院の枠（第2層）を aga-clinic-cost-guide・medical-hair-removal-cost に入れる時点で、両ページへの全リンク元を grep で洗い出し、送客文（とくに minoxidil→#simulate、hair-tonic→#checklist、mens-selfcare-start→#cost・#contract）をまとめてレビューに回す（保守 2026-11-03 レビュー R4） | 審査 | 送客 | 高（第2層の前提） | 未着手 | 第2層の案件の 00 に条件として転記する |
+| 80 | 院の枠（第2層）を aga-clinic-cost-guide・medical-hair-removal-cost に入れる時点で、両ページへの全リンク元を grep で洗い出し、送客文（とくに minoxidil→#simulate、hair-tonic→#checklist、mens-selfcare-start→#cost・#contract、aga-oral-treatment-timeline→#simulate・#subscription）をまとめてレビューに回す（保守 2026-11-03 レビュー R4） | 審査 | 送客 | 高（第2層の前提） | 未着手 | 第2層の案件の 00 に条件として転記する |
 | 81 | personal-gym-checklist 第2版（0047 v2）: MMM の A8 リンクを l.232 の枠に1本（収益・提携 2026-11-04 R1）。リンクを入れる時点で、この記事を告知する X キュー（11/20 ほか）の1行目に「#PR」を足す。J1 の回答と J2 の飛び先 URL がそろい次第。11月末「リンクのある記事4本」の3本目 | 収益 | 収益 | 高 | オーナー待ち（J1・J2） |
 | 82 | protein-guide の FIXIT FEEL NATURAL WPC の価格更新（5,980円→6,980円、1食あたり、確認日。収益・提携 2026-11-04 R3）。アフィリエイトリンクのある箇所の価格違いなので最優先で直す | 保守 | 収益 | 最高 | 完了（2026-11-04 公開） |
 | 83 | personal-gym-checklist の2社目（R4）: 男性が使え総額が公式で確認できるジムの承認後に商品企画部 | 収益 | 収益 | 中 | 承認待ち |
