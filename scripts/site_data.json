@@ -228,7 +228,7 @@
       "title": "メラトニンはなぜ日本で市販されないのか",
       "tag": "REST / JAPAN, US &amp; EU",
       "desc": "日本でメラトニンがサプリとして売られていないのはなぜか、米国・欧州との扱いの違い、個人輸入の注意点をまとめました。",
-      "updated": "2026-10-30"
+      "updated": "2026-11-10"
     },
     {
       "slug": "ashwagandha-japan",
@@ -354,7 +354,7 @@
       "title": "AGA治療の費用・解約と、通院・オンラインの違い",
       "tag": "HAIR / COST, CONTRACT &amp; ONLINE",
       "desc": "AGAの治療を一般の皮膚科・通院・オンラインのどれで受けるかの違い、初診から薬代までの費用の見方、解約や定期購入で確かめる点が分かります。",
-      "updated": "2026-10-31"
+      "updated": "2026-11-10"
     },
     {
       "slug": "medical-hair-removal-cost",
@@ -373,6 +373,15 @@
       "tag": "FIT / AFTER COURSE &amp; CONTRACT",
       "desc": "コースが終わったあと、やめたら体重や筋力は戻るのか、月額・回数券・自主トレのどれで続けるか、契約で確かめる点を順に紹介します。",
       "updated": "2026-11-03"
+    },
+    {
+      "slug": "aga-oral-treatment-timeline",
+      "category": "hair",
+      "date": "2026-11-10",
+      "title": "AGAの飲み薬は何ヶ月で判断する？",
+      "tag": "HAIR / TIMELINE &amp; STOPPING",
+      "desc": "AGAの飲み薬は何か月で効果を確かめるのか、初期脱毛は添付文書に書かれているのか、やめたらどうなるのかを時期の順にたどれます。",
+      "updated": "2026-11-10"
     }
   ],
   "latest_count": 6,
