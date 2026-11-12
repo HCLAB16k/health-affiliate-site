@@ -104,6 +104,6 @@
 | 83 | personal-gym-checklist の2社目（R4）: 男性が使え総額が公式で確認できるジムの承認後に商品企画部 | 収益 | 収益 | 中 | 承認待ち |
 | 84 | 0056・0057 第2版（院の枠、R2）: 院の承認・広告主の了承・自治体照会の判断がそろってから起票。#80 を条件に転記 | 収益 | 収益 | 高（条件待ち） | オーナー待ち |
 | 85 | hair-tonic-review・minoxidil-finasteride-guideline から aga-oral-treatment-timeline への1文リンク（0059 の 04 の文案を使う） | 保守 | 送客 | 中 | 0059 公開後 |
-| 86 | minoxidil-finasteride-guideline の #approval と比較表を、PMDA 医療用医薬品 情報検索の結果（2026-11-10「ミノキシジル」0件、.sources/pmda_iyakusearch_minoxidil_20261110.txt）に合わせて更新（0059 05 の提案） | 保守 | 品質 | 中 | 未着手 |
+| 86 | minoxidil-finasteride-guideline の #approval と比較表を、PMDA 医療用医薬品 情報検索の結果（2026-11-10「ミノキシジル」0件、.sources/pmda_iyakusearch_minoxidil_20261110.txt）に合わせて更新（0059 05 の提案）。11/12 トレンドで l.64・l.76 は今も正しいと確認 | 保守 | 品質 | 低 | 未着手 |
 | 87 | personal-gym-checklist 第2版の先行準備（収益・提携 11/11 R5）: #81 のリンク以外の差分（affiliate-box の枠・文言・PR 表示・disclaimer・X キューの #PR 方針）を作り、レビューまで済ませておく。J2 の URL が来たら差し込むだけにする | 収益 | 収益 | 高 | 未着手 |
 | 88 | 院の枠（#84）の前段の下調べ（R6）: 保健所への照会文の案、申請中の院の公式情報（料金表示・限定解除の要件）を1院ずつ。オーナーの承認後に起票する #84 の 02 の材料にする | 収益 | 収益 | 中 | 未着手 |
