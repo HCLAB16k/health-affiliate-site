@@ -1,9 +1,9 @@
 {
-  "today": "2026-11-09",
+  "today": "2026-11-16",
   "auto": {
-    "articles": 36,
+    "articles": 37,
     "articles_by_category": {
-      "ヘア・AGA": 7,
+      "ヘア・AGA": 8,
       "入門ガイド（カテゴリなし）": 1,
       "ヒゲ・脱毛": 3,
       "スキンケア": 4,
@@ -49,7 +49,8 @@
       "2026-10-31",
       "2026-10-31",
       "2026-10-31",
-      "2026-11-03"
+      "2026-11-03",
+      "2026-11-10"
     ],
     "monetized_pages": 3,
     "monetized_list": [
@@ -82,9 +83,13 @@
       {
         "case": "0057-hair-removal-cost",
         "status": "進行中"
+      },
+      {
+        "case": "0060-gym-checklist-v2",
+        "status": "進行中（リンク URL 待ち）"
       }
     ],
-    "x_scheduled_upcoming": 0,
-    "x_last_scheduled": null
+    "x_scheduled_upcoming": 7,
+    "x_last_scheduled": "2026-11-23"
   }
 }
