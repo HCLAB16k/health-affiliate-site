@@ -15,7 +15,7 @@
 - 全ページ: `canonical`、Open Graph（og:title・description・url・image）、Twitter カード（大きい画像）。共有時の画像は `images/og.png`（文字なし）。
 - 記事: 構造化データ（Article: 公開日・更新日・発行者「男の養生帖」・著者「男の養生帖 編集部」、BreadcrumbList）。トップ: WebSite。
 - `sitemap.xml`: 全ページ＋記事・カテゴリの更新日（lastmod）。記事を足すと自動で入る。
-- `robots.txt` はリポジトリ直下にあり `/health-affiliate-site/robots.txt` として配信されるが、Google が読むのはホスト直下（`https://hclab16k.github.io/robots.txt`）の robots.txt だけなので、クロール制御には使えない。sitemap は Search Console から送信済み（サイトマップの状態が「成功しました」かは月次チェックで確認）。
+- `robots.txt`: ホスト直下 `https://hclab16k.github.io/robots.txt`（リポジトリ hclab16k.github.io、2026-10-29〜）に Sitemap 行がある。リポジトリ直下の robots.txt は `/health-affiliate-site/robots.txt` として配信されるだけで Google は読まない。sitemap は Search Console から送信済み（状態の確認はオーナー）。IndexNow は Bing 等への通知で、Google のインデックスには効かない（indexing-audit-2026-11-17）。
 - 新しい記事: `scripts/site_data.json` に追加して build（CLAUDE.md 7章）。記事を更新したら `updated` を入れる。
 
 ## 月次チェック（オーナー → 分析部）
