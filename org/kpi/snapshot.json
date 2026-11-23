@@ -1,5 +1,5 @@
 {
-  "today": "2026-11-16",
+  "today": "2026-11-23",
   "auto": {
     "articles": 37,
     "articles_by_category": {
@@ -58,7 +58,7 @@
       "protein-guide",
       "tools"
     ],
-    "owner_inbox_open": 44,
+    "owner_inbox_open": 45,
     "active_cases": [
       {
         "case": "0028-mens-toner-allinone",
@@ -89,7 +89,7 @@
         "status": "進行中（リンク URL 待ち）"
       }
     ],
-    "x_scheduled_upcoming": 7,
-    "x_last_scheduled": "2026-11-23"
+    "x_scheduled_upcoming": 6,
+    "x_last_scheduled": "2026-12-07"
   }
 }
