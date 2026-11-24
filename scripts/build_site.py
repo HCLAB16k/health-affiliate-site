@@ -27,7 +27,7 @@ def read(path):
 def write(path, text):
     if path.endswith(".html"):
         # link the home page by its canonical URL (directory), not index.html (indexing audit 2026-11-17)
-        text = text.replace('href="index.html"', 'href="./"').replace('href="../index.html"', 'href="../"')
+        text = text.replace('href="index.html"', 'href="./"').replace('href="../index.html"', 'href="../"').replace('href=".././"', 'href="../"')
     full = os.path.join(ROOT, path)
     os.makedirs(os.path.dirname(full), exist_ok=True)
     with open(full, "w", encoding="utf-8") as f:
