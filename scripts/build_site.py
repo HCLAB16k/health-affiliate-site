@@ -25,6 +25,9 @@ def read(path):
 
 
 def write(path, text):
+    if path.endswith(".html"):
+        # link the home page by its canonical URL (directory), not index.html (indexing audit 2026-11-17)
+        text = text.replace('href="index.html"', 'href="./"').replace('href="../index.html"', 'href="../"').replace('href=".././"', 'href="../"')
     full = os.path.join(ROOT, path)
     os.makedirs(os.path.dirname(full), exist_ok=True)
     with open(full, "w", encoding="utf-8") as f:
@@ -272,7 +275,7 @@ for f in files:
     write(f, s)
 
 # ---------- sitemap ----------
-urls = [(SITE, None), (SITE + "about.html", None), (SITE + "disclosure.html", None), (SITE + "privacy.html", None)]
+urls = [(SITE, max(a.get("updated") or a["date"] for a in data["articles"])), (SITE + "about.html", None), (SITE + "disclosure.html", None), (SITE + "privacy.html", None)]
 urls += [(SITE + p["file"], p.get("updated")) for p in data.get("pages", [])]
 urls += [(f"{SITE}category/{c['id']}.html", max([a.get("updated") or a["date"] for a in by_cat[c["id"]]] or [None])) for c in cats]
 urls += [(f"{SITE}articles/{a['slug']}.html", a.get("updated") or a["date"]) for a in sorted(data["articles"], key=lambda a: a["date"])]

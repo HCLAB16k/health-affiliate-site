@@ -145,3 +145,37 @@
 - `org/seo/README.md` 18行の robots.txt の記述が現状と食い違う（4-E）。
 - 計測はこのサンドボックスのプロキシ経由で、実際の利用者の回線・Google の取得とは異なる。トップの load イベントだけ 24 秒かかったが、FCP/LCP は 1.2 秒で、GA のビーコンがプロキシで待たされた計測上の現象と推定（他ページは 1.0〜1.6 秒）。
 - 外部の被リンク数、Google の登録状況・順位は外からは確かめていない（site: 検索は自動取得しない方針）。
+
+## レビュー部の判定（2026-11-24）
+
+対象: コミット 5bc958f（`git diff HEAD~1`）。scripts/build_site.py の write() でのトップへのリンク置き換え、sitemap のトップの lastmod、その build 結果（HTML 49件・sitemap.xml）。
+
+**判定: REVISE（軽微。直せば公開してよい）** — 差し戻し先: 経営企画（scripts/build_site.py）
+
+### 確認したこと
+1. **文面・pr-badge・disclaimer・アフィリエイトリンクに変化なし**: 変更された HTML 49件すべてについて、HEAD~1 の内容に同じ置き換え（`href="index.html"`→`href="./"`、`href="../index.html"`→`href="../"`）だけを当てたものと現物を突き合わせた。記事37件・ルート4件（index/about/disclosure/privacy/tools）は完全一致。差分はロゴとパンくずの href だけ（記事は2か所、他は1か所）。pr-badge・disclaimer・`rel` 属性・ASP リンクには触れていない。
+2. **意図しないリンクへの当たり**: 置き換えは `href="` から始まる完全一致のみ。出典リストの外部 URL（mhlw.go.jp/…/index.html、cdc.gov/…/index.html など）はテキストであり、href の値も完全一致しないため影響なし。公開 HTML（org/ 以外）に `href="…index.html"` の残りは 0 件。
+3. **GitHub Pages での解決**: `./`（ルートのページ）、`../`（articles/）はいずれも `https://hclab16k.github.io/health-affiliate-site/` に解決（urljoin で確認）。トップは HTTP 200 で、canonical・og:url もこの URL と一致。
+4. **sitemap**: トップに `<lastmod>2026-11-17</lastmod>`。site_data.json の記事の date/updated の最大値（2026-11-17）と一致し、未来日ではない。他の URL は変化なし。
+5. **org/ 配下**: `_config.yml` で org を配信除外。org/pipeline/0018-protein-rewrite/draft-protein-guide.html は今回の diff に含まれず未変更（対象外として妥当）。
+
+### 指摘（REVISE の理由）
+- **R1 カテゴリページ8件のロゴが `href=".././"` になっている**（category/*.html 40行目付近）。原因: カテゴリページのヘッダーを、ディスク上の about.html（前回の build で既に `href="./"` に置き換え済み）から読み、`../` を前置するため `../` + `./` になる。ブラウザ・Google では `https://hclab16k.github.io/health-affiliate-site/` に解決するので実害はないが、(a) 仕様（D0021・backlog #89 に記録した「../」）と食い違う、(b) 変更前の状態から1回目の build では `../`、2回目以降は `.././` になり、出力が build 回数に依存する。
+  - 直し方の例: カテゴリのヘッダー・フッターに `../` を前置したあとで `href=".././"` を `href="../"` に戻す、または write() の置き換えに `.replace('href=".././"', 'href="../"')` を足す。直したら `python3 scripts/build_site.py` を2回続けて実行し、2回目で差分が出ないこと（冪等）を確かめる。
+  - 再審査は category/*.html 8件と build_site.py の差分のみでよい。
+
+### 任意の提案
+- write() の置き換えは HTML 全体に効くため、今後記事本文で意図的に `href="index.html"` と書いた場合も書き換わる（現状は該当なし。挙動としては望ましい側）。コメントに「全文に効く」と一言残すとよい。
+- ローカルで file:// から開くと `./` はフォルダ一覧になる（配信には影響なし）。
+
+## レビュー部の判定（2026-11-24・第2回審査）
+
+対象: コミット e587283（`git diff HEAD~1`。scripts/build_site.py 1行、category/*.html 8件、本書への第1回判定の追記）。
+
+**判定: PASS**
+
+- R1 は解消した。write() の置き換えに `.replace('href=".././"', 'href="../"')` が足され、category 8件のロゴは `href=".././"` → `href="../"` の1行ずつだけが変わった（各ファイル 1+/1-）。ほかの行・ほかのファイルには変化なし。
+- 公開 HTML（org/ 以外）に `href=".././"`・`href="./././"`・`href="…index.html"` の残りは 0 件。`../` は https://hclab16k.github.io/health-affiliate-site/ に解決する（第1回で確認済み）。
+- 冪等性: 経営企画の報告（コミット後の build で変更ファイル 0）を受け、作業ツリーに未コミットの差分が無いことを確かめた。レビュー部では build を実行していない（ファイルに書き込むため）。
+- 記事の文面・pr-badge・disclaimer・アフィリエイトリンクへの影響は第1回の確認から変わらない（今回の差分は記事に触れていない）。
+- 任意の提案（第1回の「全文に効く」旨のコメント）は引き続き任意。
